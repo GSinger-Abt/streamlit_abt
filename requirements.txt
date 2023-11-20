@@ -1,0 +1,11 @@
+altair
+pandas
+streamlit
+geopandas
+folium
+ipywidgets
+IPython
+pybase64
+datetime
+scipy
+streamlit-folium
