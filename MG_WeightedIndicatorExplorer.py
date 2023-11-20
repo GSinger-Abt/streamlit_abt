@@ -121,7 +121,7 @@ def render_map(df, choropleth_name):
         name = choropleth_name,
         data = df,
         columns=['OBJECTID','Vulnerability_Index_Percentile'],
-        # key_on='feature.id',
+        key_on='feature.id',
         fill_color='RdYlBu_r',
         fill_opacity=0.7,
         line_opacity=0.5,
