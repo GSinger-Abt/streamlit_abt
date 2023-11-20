@@ -165,7 +165,7 @@ def render_map(df, choropleth_name):
         #     aliases=['Commune', "VI", "VI Percentile"] + normalized_cols,
         #     max_width=600, max_height=200, sticky=False
         #     ),
-        # control= False
+        control= False
     ).add_to(m1)
     
     # Add Esri Map Labels
