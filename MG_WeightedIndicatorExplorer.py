@@ -231,7 +231,7 @@ tab1,tab2 = st.tabs(["🗺️ Unweighted VI","🗺️ Weighted VI"])
 core_columns, columns_to_normalize, reverse = define_processing_col_groups()
 
 # Load geopandas dataframe 
-gdf = load_geopandas_df('https://drive.google.com/uc?id=1lPv-4dpdk4dLs4ySi6EFJmb10cMgNFgk')
+gdf = load_geopandas_df('https://raw.githubusercontent.com/TheDigitalGarbologist/Madagascar_VulnerabilityIndex/main/MadagascarCommunes_VI_Analysis_v3.geojson')
 # Create unweighted vulnerability index dataframe
 root_df = create_vulnerability_index(gdf, weights_dict=None)
 # Load Map and Map HTML
