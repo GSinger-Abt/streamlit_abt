@@ -25,13 +25,6 @@ st.markdown(
 *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 """
 )
- # Display Instructions
-st.markdown("""
-Adjust the indicator using the sliders below then click the 'Update!' button below the sliders to update the map.
----
-*
-"""
-)
    
 # Define Processing Column Groups
 def define_processing_col_groups():
