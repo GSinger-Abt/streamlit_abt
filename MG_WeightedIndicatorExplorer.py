@@ -18,12 +18,18 @@ st.set_page_config(
 st.title('Madagascar - Weighted Vulnerability Index Explorer (Streamlit App Demo)')
 
 st.markdown(
-    """ ### Map Hints:
-- Use your mouse to interact with the map and reveal additional information about each commune by hovering over it or clicking on it!
-- Use the interactive weight slider on the left to create a Weighted Vulnerability Index.
+    """ This tool gives you the ability to see how altering the weighted importance of each vulnerability indicaor affects the Vulnerability Index Score and Percentile of each Commune. To adjust the indicators, use the sliders to your left, scroll down, and hit the submit button. 
+    The tool will take about 30 seconds to re-load depending on your internet connection. Also, the maps and data tables are interactive!
 
 ---
-*You can download html versions of the maps produced by this tool. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
+*Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
+"""
+)
+ # Display Instructions
+st.markdown("""
+Adjust the indicator using the sliders below then click the 'Update!' button below the sliders to update the map.
+---
+*
 """
 )
    
@@ -281,13 +287,7 @@ widget_alias_dict = {
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
-         # Display Instructions
-        st.markdown("""
-        Adjust the indicator using the sliders below then click the 'Update!' button below the sliders to update the map.
-        ---
-        *This will take about 25 to 30 seconds depending on your internet connection.*
-        """
-        )
+
         for column in columns_to_normalize:
             weights_dict[f'{column}'] = st.slider(
             # weights_dict[f'{column}_weight'] = st.slider(
