@@ -79,7 +79,7 @@ def create_zscore_index(sdf, weights_dict):
         weight_col_suffix = '_weight'
         weight_value = 0.1 if weights_dict is None else weights_dict[column]
         normalized_df[column + weight_col_suffix] = weight_value
-        final_suffix = "_NW_Final"
+        final_suffix = "_weighted_zscore"
         normalized_df[column + final_suffix] = normalized_df[column + normalized_col_suffix]  * normalized_df[column + weight_col_suffix]
     normalized_df['Vulnerability_Index'] = round(normalized_df.filter(like=final_suffix, axis=1).sum(axis=1),4)
     normalized_df['Vulnerability_Index_Percentile'] = round(normalized_df['Vulnerability_Index'].rank(pct=True) * 100)
