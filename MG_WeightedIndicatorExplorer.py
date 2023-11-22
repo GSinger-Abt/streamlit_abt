@@ -232,7 +232,7 @@ core_columns, columns_to_normalize, reverse = define_processing_col_groups()
 
 # Load geopandas dataframe 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/path/to/your/MadagascarCommunes_VI_Analysis.geojson'
-gdf = load_geopandas_df(geosjon_path)
+gdf = load_geopandas_df(geojson_path)
 # Create unweighted vulnerability index dataframe
 root_df = create_vulnerability_index(gdf, weights_dict=None)
 # Load Map and Map HTML
