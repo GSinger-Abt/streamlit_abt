@@ -172,7 +172,7 @@ def render_map(df, choropleth_name):
     map_labels = folium.TileLayer(
         tiles = 'https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
         attr = 'Esri',
-        name = 'Esri World Boundaries andPlaces',
+        name = 'Esri World Boundaries and Places',
         overlay = True,
         show = True,
         control = True
