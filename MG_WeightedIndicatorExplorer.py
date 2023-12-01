@@ -293,6 +293,8 @@ widget_alias_dict = {
     'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
     'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
     }
+# Sort Keys Alphabetically
+weights_alias_dict = dict(sorted(weights_alias_dict.items()))
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
