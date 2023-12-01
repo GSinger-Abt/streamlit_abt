@@ -241,6 +241,10 @@ map_html = m1._repr_html_()
 
 # Initialize session state
 if 'tab1_data' not in st.session_state:
+    ''' 
+    The purpose of these session states is to ensure that the app does not reload items in this tab
+    when then the Update! button is selected. Another session state is employed for data in tab3. 
+    '''
     st.session_state.tab1_data = {'result': None, 'map_html': None, 'timestamp': None}
 
 # Display Unweighted Map and DataFrame
@@ -262,20 +266,6 @@ with tab1:
         # Display the dataframe
         st.subheader(f"{map_title} Dataframe:")
         st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
-        
-# # Display Unweighted Map and DataFrame
-# with tab1:
-#     st.subheader("Unweighted VI")
-#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-#     if st.session_state.result_tab1 = result_tab1
-    
-#     with st.container():
-#         components.html(map_html, width=800, height=500,scrolling = True)
-#         # download_map(m1, map_title, timestamp)
-#         st.subheader(f"{map_title} Dataframe:")
-#         st.dataframe(root_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
-#         # download_dataframe(root_df, map_title, timestamp)
 
 # Create a dictionary to store the input widgets
 weights_dict = {}
