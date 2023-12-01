@@ -294,7 +294,7 @@ widget_alias_dict = {
     'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
     }
 # Sort Keys Alphabetically
-weights_alias_dict = dict(sorted(weights_alias_dict.items()))
+widget_alias_dict = dict(sorted(widget_alias_dict.items()))
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
