@@ -360,4 +360,4 @@ with tab3:
         st.session_state.tab3_data["experience_builder_url"] = experience_builder_url
         
     st.link_button('Click here to open the Indicator Explorer in another window.', experience_builder_url, type="primary")
-    components.iframe(st.session_state.tab3_data(['experience_builder_url']), width = 1400, height = 800, scrolling = True))
+    components.iframe(st.session_state.tab3_data['experience_builder_url'], width = 1400, height = 800, scrolling = True)
