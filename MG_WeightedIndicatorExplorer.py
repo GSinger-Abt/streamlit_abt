@@ -42,13 +42,33 @@ def define_processing_col_groups():
         ]
     
     columns_to_normalize = [
+        'USAID_PRECIP',
         'IPC_AVC',
-        'DIS_AFF','DIS_CROPDMG',
-        'MK_DIST','MK_VOLA','MK_ANOM',
-        'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
-        'RD_DENSUNREV',
+        'USAID_IPC',
+        'USAID_PIF',
+        'USAID_WALKING',
+        'DIS_CROPDMG',
+        'MK_DIST',
+        'MK_VOLA',
+        'MK_ANOM',
+        'DIS_AFF',	
+        'USAID_SD',
         'ST_SUM',
+        'USAID_STUNTING',
+        "RD_DENSUNREV",
+        'USAIDWEALTH',
         'CON_DFA1C',
+        # 'CON_DFA2C',
+        # 'CON_NDFAC1',
+        # 'CON_NDFAC2',
+        'USAID_VAC'
+        # 'IPC_AVC',
+        # 'DIS_AFF','DIS_CROPDMG',
+        # 'MK_DIST','MK_VOLA','MK_ANOM',
+        # 'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
+        # 'RD_DENSUNREV',
+        # 'ST_SUM',
+        # 'CON_DFA1C',
         #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
       ]
     
