@@ -272,26 +272,27 @@ with tab1:
 weights_dict = {}
 # Set Alias Dict
 widget_alias_dict = {
+    'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
+    'Average IPC Score': 'IPC_AVC',
+    'Average IPC Scores from 2020-2023':'USAID_IPC',
+    'Average Prevalence of Insufficient Food Consumption':'USAID_PIF',
+    'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
+    'Crop Damage HA':'DIS_CROPDMG',
+    'Distance to Nearest Market (KM)': 'MK_DIST',
+    'Market Price Volatility Score':'MK_VOLA',
+    'Market Pricing Anomaly Score': 'MK_ANOM',
+    'Number of People Affected by Natural Disasters': 'DIS_AFF',
+    'Number of Strategic Development Events':'USAID_SD',
+    'Percent Children Stunted (Total)':'ST_SUM',
+    'Prevalence of Stunting':'USAID_STUNTING',
+    "Road Density": "RD_DENSUNREV",
+    'Relative Wealth Index (Reversed)':'USAIDWEALTH',
     'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
     # 'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
     # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
     # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
-    'Percent Children Stunted (Total)':'ST_SUM',
-    "Road Density": "RD_DENSUNREV",
-    'Distance to Nearest Market (KM)': 'MK_DIST',
-    'Market Price Volatility Score':'MK_VOLA',
-    'Market Pricing Anomaly Score': 'MK_ANOM',
-    'Average IPC Score': 'IPC_AVC',
-    'Number of People Affected by Natural Disasters': 'DIS_AFF',
-    'Crop Damage HA':'DIS_CROPDMG',
     'Violence Against Civilians (Total)':'USAID_VAC',
-    'Number of Strategic Development Events':'USAID_SD',
-    'Average IPC Scores from 2020-2023':'USAID_IPC',
-    'Prevalence of Stunting':'USAID_STUNTING',
-    'Relative Wealth Index (Reversed)':'USAIDWEALTH',
-    'Average Prevalence of Insufficient Food Consumption':'USAID_PIF',
-    'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
-    'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
+
     }
 # Sort Keys Alphabetically
 widget_alias_dict = dict(sorted(widget_alias_dict.items()))
