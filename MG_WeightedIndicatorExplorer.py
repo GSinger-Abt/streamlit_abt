@@ -271,7 +271,7 @@ with tab1:
 weights_dict = {}
 # Set Alias Dict
 widget_alias_dict = {
-    'Violence Against Civillians from Dahalo Attacks': 'CON_DFA1C',
+    'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
     'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
     'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
     'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
