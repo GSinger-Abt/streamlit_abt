@@ -287,7 +287,7 @@ widget_alias_dict = {
     'Number of Strategic Development Events':'USAID_SD',
     'Average IPC Scores from 2020-2023':'USAID_IPC',
     'Prevalence of Stunting':'USAID_STUNTING',
-    'Relative Wealth Index (Reversed)':'USAID_Wealth',
+    'Relative Wealth Index (Reversed)':'USAIDWealth',
     'Average Prevalence of Insufficient Food Consumption':'USAID_PIF',
     'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
     'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
