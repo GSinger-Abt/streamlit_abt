@@ -42,7 +42,8 @@ def define_processing_col_groups():
         ]
     
     columns_to_normalize = [
-        'CON_DFA1C','CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
+        'CON_DFA1C',
+        #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
         'ST_SUM',
         'RD_DENSUNREV',
         'IPC_AVC',
@@ -272,9 +273,9 @@ weights_dict = {}
 # Set Alias Dict
 widget_alias_dict = {
     'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
-    'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
-    'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
-    'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
+    # 'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
+    # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
+    # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
     'Percent Children Stunted (Total)':'ST_SUM',
     "Road Density": "RD_DENSUNREV",
     'Distance to Nearest Market (KM)': 'MK_DIST',
