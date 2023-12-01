@@ -42,14 +42,14 @@ def define_processing_col_groups():
         ]
     
     columns_to_normalize = [
+        'IPC_AVC',
+        'DIS_AFF','DIS_CROPDMG',
+        'MK_DIST','MK_VOLA','MK_ANOM',
+        'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
+        'RD_DENSUNREV',
+        'ST_SUM',
         'CON_DFA1C',
         #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
-        'ST_SUM',
-        'RD_DENSUNREV',
-        'IPC_AVC',
-        'MK_DIST','MK_VOLA','MK_ANOM',
-        'DIS_AFF','DIS_CROPDMG',
-        'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
       ]
     
     reverse = ['RD_DENSUNREV']
