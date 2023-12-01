@@ -246,7 +246,8 @@ if 'tab1_data' not in st.session_state:
 # Display Unweighted Map and DataFrame
 with tab1:
     st.subheader("Unweighted VI")
-    
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     # Check if the data for Tab 1 is already calculated
     if st.session_state.tab1_data['result'] is None:        
         # Store the data in session state
