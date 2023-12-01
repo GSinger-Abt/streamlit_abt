@@ -345,9 +345,19 @@ with tab2:
                 download_dataframe(weighted_df, map_title2, timestamp)
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
 
+# Initialize session state
+if 'tab3_data' not in st.session_state:
+    st.session_state.tab3_data = {'experience_builder_url': None}
+    
 # Display Indicator Explorer
 with tab3:
     st.title("Indicator Explorer (ArcGIS)")
     experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
+
+    # Check if the data for Tab 3 is already calculated
+    if st.session_state.tab3_data['title'] is None:        
+        # Store the data in session state
+        st.session_state.tab3_data["experience_builder_url"] = experience_builder_url
+        
     st.link_button('Click here to open the Indicator Explorer in another window.', experience_builder_url, type="primary")
-    components.iframe(experience_builder_url, width = 1400, height = 800, scrolling = True)
+    components.iframe(st.session_state.tab3_data(['experience_builder_url']), width = 1400, height = 800, scrolling = True))
