@@ -239,16 +239,55 @@ m1 = render_map(root_df, map_title)
 # Display the Folium map using st.components.html
 map_html = m1._repr_html_()
 
+# Initialize session state
+if 'tab1_data' not in st.session_state:
+    st.session_state.tab1_data = {'result': None, 'map_html': None, 'timestamp': None}
+
 # Display Unweighted Map and DataFrame
 with tab1:
     st.subheader("Unweighted VI")
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Check if the data for Tab 1 is already calculated
+    if st.session_state.tab1_data['result'] is None:
+        # Calculate the data for Tab 1
+        result_tab1, map_html, timestamp = calculate_tab1()
+        
+        # Store the data in session state
+        st.session_state.tab1_data['result'] = result_tab1
+        st.session_state.tab1_data['map_html'] = map_html
+        st.session_state.tab1_data['timestamp'] = timestamp
+
     with st.container():
-        components.html(map_html, width=800, height=500,scrolling = True)
-        # download_map(m1, map_title, timestamp)
+        # Display the HTML components
+        components.html(st.session_state.tab1_data['map_html'], width=800, height=500, scrolling=True)
+        
+        # Display the dataframe
         st.subheader(f"{map_title} Dataframe:")
-        st.dataframe(root_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
-        # download_dataframe(root_df, map_title, timestamp)
+        st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
+
+# Function to calculate data for Tab 1
+def calculate_tab1():
+    # Your calculation logic for Tab 1 goes here
+    result = root_df  # Replace this with your actual calculation
+    
+    # Assuming you have map_html and timestamp to save as well
+    map_html = "<div>Your map HTML content</div>"
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    return result, map_html, timestamp
+# # Display Unweighted Map and DataFrame
+# with tab1:
+#     st.subheader("Unweighted VI")
+#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+#     if st.session_state.result_tab1 = result_tab1
+    
+#     with st.container():
+#         components.html(map_html, width=800, height=500,scrolling = True)
+#         # download_map(m1, map_title, timestamp)
+#         st.subheader(f"{map_title} Dataframe:")
+#         st.dataframe(root_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
+#         # download_dataframe(root_df, map_title, timestamp)
 
 # Create a dictionary to store the input widgets
 weights_dict = {}
