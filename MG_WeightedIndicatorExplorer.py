@@ -322,5 +322,6 @@ with tab2:
 with tab3:
     st.title("Indicator Explorer (ArcGIS)")
     experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
-    # Use st.markdown with HTML to embed the website using an iframe
-    st.markdown(f'<iframe src="{experience_builder_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
+    components.iframe(experience_builder_url, scrolling=True)
+    # # Use st.markdown with HTML to embed the website using an iframe
+    # st.markdown(f'<iframe src="{experience_builder_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
