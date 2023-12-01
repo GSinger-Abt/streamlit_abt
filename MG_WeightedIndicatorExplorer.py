@@ -355,7 +355,7 @@ with tab3:
     experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
 
     # Check if the data for Tab 3 is already calculated
-    if st.session_state.tab3_data['title'] is None:        
+    if st.session_state.tab3_data['experience_builder_url'] is None:        
         # Store the data in session state
         st.session_state.tab3_data["experience_builder_url"] = experience_builder_url
         
