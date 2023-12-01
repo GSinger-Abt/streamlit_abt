@@ -293,30 +293,6 @@ widget_alias_dict = {
     'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
     }
 
-# # Set Alias Dict
-# widget_alias_dict = {
-#     'Dahalo Flag Actor 1 (Count)': 'CON_DFA1C',
-#     'Dahalo Flag Actor 2 (Count)': 'CON_DFA2C',
-#     'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
-#     'Non-Dahalo Flag Actor 2 (Sum)':'CON_NDFAC2',
-#     'Stunting (Sum)':'ST_SUM',
-#     "Road Density":"RD_DENSUNREV",
-#     'Distance To Market': 'MK_DIST',
-#     'Market Price Volatility':'MK_VOLA',
-#     'Anomaly Rate': 'MK_ANOM',
-#     'IPC Average': 'IPC_AVC',
-#     'Distance - Affected': 'DIS_AFF',
-#     'Crop Damage HA':'DIS_CROPDMG',
-#     'USAID VAC':'USAID_VAC',
-#     'USAID SD':'USAID_SD',
-#     'USAID IPC':'USAID_IPC',
-#     'USAID STUNTING':'USAID_STUNTING',
-#     'USAID WEALTH':'USAIDWEALTH',
-#     'USAID PIF':'USAID_PIF',
-#     'USAID PRECIP':'USAID_PRECIP',
-#     'USAID WALKING':'USAID_WALKING',
-#     }
-
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
     with st.form("Weight Sliders"):
