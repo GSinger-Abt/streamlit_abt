@@ -182,7 +182,7 @@ def render_map(df, choropleth_name):
     # Add to Layer Control
     folium.LayerControl().add_to(m1)
     # Add Fullscreen plugin
-    Fullscreen().add_to(m1)
+    Fullscreen(position='bottomleft').add_to(m1)
     # st.subheader(choropleth_name)
     # folium_static(m1._repr_html_(), width=725, returned_objects=[])
     return(m1)
