@@ -292,10 +292,9 @@ widget_alias_dict = {
     # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
     # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
     'Violence Against Civilians (Total)':'USAID_VAC',
-
     }
-# Sort Keys Alphabetically
-widget_alias_dict = dict(sorted(widget_alias_dict.items()))
+# # Sort Keys Alphabetically
+# widget_alias_dict = dict(sorted(widget_alias_dict.items()))
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
