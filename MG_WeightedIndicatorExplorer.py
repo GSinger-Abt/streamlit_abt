@@ -231,13 +231,13 @@ core_columns, columns_to_normalize, reverse = define_processing_col_groups()
 
 # Load geopandas dataframe 
 gdf = load_geopandas_df(r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson')
-# Create unweighted vulnerability index dataframe
-root_df = create_vulnerability_index(gdf, weights_dict=None)
-# Load Map and Map HTML
-map_title = 'Unweighted Vulnerability Index'
-m1 = render_map(root_df, map_title)
-# Display the Folium map using st.components.html
-map_html = m1._repr_html_()
+# # Create unweighted vulnerability index dataframe
+# root_df = create_vulnerability_index(gdf, weights_dict=None)
+# # Load Map and Map HTML
+# map_title = 'Unweighted Vulnerability Index'
+# m1 = render_map(root_df, map_title)
+# # Display the Folium map using st.components.html
+# map_html = m1._repr_html_()
 
 # Initialize session state
 if 'tab1_data' not in st.session_state:
@@ -249,8 +249,14 @@ with tab1:
     
     # Check if the data for Tab 1 is already calculated
     if st.session_state.tab1_data['result'] is None:
-        # Calculate the data for Tab 1
-        result_tab1, map_html, timestamp = calculate_tab1()
+        # Create unweighted vulnerability index dataframe
+        root_df = create_vulnerability_index(gdf, weights_dict=None)
+        # Load Map and Map HTML
+        map_title = 'Unweighted Vulnerability Index'
+        m1 = render_map(root_df, map_title)
+        # Display the Folium map using st.components.html
+        map_html = m1._repr_html_()
+
         
         # Store the data in session state
         st.session_state.tab1_data['result'] = result_tab1
@@ -265,16 +271,6 @@ with tab1:
         st.subheader(f"{map_title} Dataframe:")
         st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
 
-# Function to calculate data for Tab 1
-def calculate_tab1():
-    # Your calculation logic for Tab 1 goes here
-    result = root_df  # Replace this with your actual calculation
-    
-    # Assuming you have map_html and timestamp to save as well
-    map_html = "<div>Your map HTML content</div>"
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    return result, map_html, timestamp
 # # Display Unweighted Map and DataFrame
 # with tab1:
 #     st.subheader("Unweighted VI")
