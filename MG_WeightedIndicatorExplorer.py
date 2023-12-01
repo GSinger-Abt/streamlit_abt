@@ -261,7 +261,7 @@ with tab1:
         # Display the dataframe
         st.subheader(f"{map_title} Dataframe:")
         st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
-
+        
 # # Display Unweighted Map and DataFrame
 # with tab1:
 #     st.subheader("Unweighted VI")
