@@ -224,7 +224,7 @@ def download_dataframe(df, csv_name, timestamp):
     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)
 
 # Setup Streatmlit Tabs
-tab1,tab2,tab3 = st.tabs(["🗺️ Unweighted VI","🗺️ Weighted VI", "Indicator Explorer (ArcGIS)"])
+tab1,tab2,tab3 = st.tabs(["🗺️ Unweighted VI","🗺️ Weighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
 # Define core columns and columns to rank with reverse exception
 core_columns, columns_to_normalize, reverse = define_processing_col_groups()
@@ -322,6 +322,6 @@ with tab2:
 with tab3:
     st.title("Indicator Explorer (ArcGIS)")
     experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
-    components.iframe(experience_builder_url, scrolling=True)
+    components.iframe(experience_builder_url, width = "1000", height = "1000")
     # # Use st.markdown with HTML to embed the website using an iframe
     # st.markdown(f'<iframe src="{experience_builder_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
