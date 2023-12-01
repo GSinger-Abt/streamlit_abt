@@ -231,13 +231,13 @@ core_columns, columns_to_normalize, reverse = define_processing_col_groups()
 
 # Load geopandas dataframe 
 gdf = load_geopandas_df(r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson')
-# # Create unweighted vulnerability index dataframe
-# root_df = create_vulnerability_index(gdf, weights_dict=None)
-# # Load Map and Map HTML
-# map_title = 'Unweighted Vulnerability Index'
-# m1 = render_map(root_df, map_title)
-# # Display the Folium map using st.components.html
-# map_html = m1._repr_html_()
+# Create unweighted vulnerability index dataframe
+root_df = create_vulnerability_index(gdf, weights_dict=None)
+# Load Map and Map HTML
+map_title = 'Unweighted Vulnerability Index'
+m1 = render_map(root_df, map_title)
+# Display the Folium map using st.components.html
+map_html = m1._repr_html_()
 
 # Initialize session state
 if 'tab1_data' not in st.session_state:
@@ -248,16 +248,7 @@ with tab1:
     st.subheader("Unweighted VI")
     
     # Check if the data for Tab 1 is already calculated
-    if st.session_state.tab1_data['result'] is None:
-        # Create unweighted vulnerability index dataframe
-        root_df = create_vulnerability_index(gdf, weights_dict=None)
-        # Load Map and Map HTML
-        map_title = 'Unweighted Vulnerability Index'
-        m1 = render_map(root_df, map_title)
-        # Display the Folium map using st.components.html
-        map_html = m1._repr_html_()
-
-        
+    if st.session_state.tab1_data['result'] is None:        
         # Store the data in session state
         st.session_state.tab1_data['result'] = root_df
         st.session_state.tab1_data['map_html'] = map_html
