@@ -259,7 +259,7 @@ with tab1:
 
         
         # Store the data in session state
-        st.session_state.tab1_data['result'] = result_tab1
+        st.session_state.tab1_data['result'] = root_df
         st.session_state.tab1_data['map_html'] = map_html
         st.session_state.tab1_data['timestamp'] = timestamp
 
