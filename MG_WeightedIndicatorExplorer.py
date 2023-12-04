@@ -248,7 +248,7 @@ def download_dataframe(df, csv_name, timestamp):
     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)
 
 # Setup Streatmlit Tabs
-tab1,tab2,tab3 = st.tabs(["🗺️ Unweighted VI","🗺️ Weighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
+tab2,tab1,tab3 = st.tabs(["🗺️ Unweighted VI","🗺️ Weighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
 # Define core columns and columns to rank with reverse exception
 core_columns, columns_to_normalize, reverse = define_processing_col_groups()
