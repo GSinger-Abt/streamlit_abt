@@ -322,7 +322,7 @@ with st.sidebar:
             # weights_dict[f'{column}_weight'] = st.slider(
                 # Use a dictionary to remap description
                 label = get_key_by_value(widget_alias_dict, column),
-                help = 'Testing the tooltip functionality',
+                help = f'{get_key_by_value(widget_alias_dict, column)}',
                 min_value=0.0,
                 max_value=1.0,
                 value= 0.1,
