@@ -15,7 +15,7 @@ st.set_page_config(
     page_icon="🗺️",
     layout="wide",
 )
-st.title('Madagascar - Weighted Vulnerability Index (VI) Explorer)')
+st.title('Madagascar - Weighted Vulnerability Index (VI) Explorer')
 st.header("StreamLit App Draft")
 
 st.markdown(
