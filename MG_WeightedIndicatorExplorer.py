@@ -18,8 +18,8 @@ st.set_page_config(
 st.title('Madagascar - Weighted Vulnerability Index Explorer (Streamlit App Demo)')
 
 st.markdown(
-    """ This tool gives you the ability to see how altering the weighted importance of each vulnerability indicaor affects the Vulnerability Index Score and Percentile of each Commune. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
-    The tool will take about 30 seconds to re-load depending on your internet connection. Also, the maps and data tables are interactive!
+    """ Use this tool to create a custom Weighted Vulnerability Index for Commune's in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+    The tool will take about 30 seconds to re-load depending on your internet connection. Choose a tab below and explore the interactive maps and data tables!
 
 ---
 *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
