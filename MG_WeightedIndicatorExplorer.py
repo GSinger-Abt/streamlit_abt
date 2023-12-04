@@ -26,7 +26,7 @@ st.markdown(
 """
 )
 
-st.link_button("Click here to open Codebook *PLACEHOLDER*", "", help=None, type='secondary')
+st.link_button("Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md", help=None, type='secondary')
 
    
 # Define Processing Column Groups
