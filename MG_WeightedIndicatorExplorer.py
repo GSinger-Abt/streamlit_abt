@@ -25,6 +25,9 @@ st.markdown(
 *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 """
 )
+
+st.link_button("Click here to open Codebook *PLACEHOLDER*", "", help=None, type='secondary')
+
    
 # Define Processing Column Groups
 def define_processing_col_groups():
@@ -316,7 +319,6 @@ widget_alias_dict = {
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
-        st.text("Place Holder Text for Codebook URL")
 
         for column in columns_to_normalize:
             weights_dict[f'{column}'] = st.slider(
