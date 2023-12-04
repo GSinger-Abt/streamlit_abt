@@ -263,8 +263,8 @@ map_html = m1._repr_html_()
 # Initialize session state
 if 'tab1_data' not in st.session_state:
     ''' 
-    The purpose of these session states is to ensure that the app does not reload items in this tab
-    when then the Update! button is selected. Another session state is employed for data in tab3. 
+    The Weighted Vulnerability Index (VI) map will load once the weights have been assigned using the menu on the left side of the app
+    and the "Update!" button has been pressed. The update will take about 30 seconds, depending on your internet connection. 
     '''
     st.session_state.tab1_data = {'result': None, 'map_html': None, 'timestamp': None}
 
