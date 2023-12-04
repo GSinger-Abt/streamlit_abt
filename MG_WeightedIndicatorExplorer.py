@@ -18,7 +18,7 @@ st.set_page_config(
 st.title('Madagascar - Weighted Vulnerability Index Explorer (Streamlit App Demo)')
 
 st.markdown(
-    """ This tool gives you the ability to see how altering the weighted importance of each vulnerability indicaor affects the Vulnerability Index Score and Percentile of each Commune. To adjust the indicators, use the sliders to your left, scroll down, and hit the submit button. 
+    """ This tool gives you the ability to see how altering the weighted importance of each vulnerability indicaor affects the Vulnerability Index Score and Percentile of each Commune. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
     The tool will take about 30 seconds to re-load depending on your internet connection. Also, the maps and data tables are interactive!
 
 ---
@@ -322,6 +322,7 @@ with st.sidebar:
             # weights_dict[f'{column}_weight'] = st.slider(
                 # Use a dictionary to remap description
                 label = get_key_by_value(widget_alias_dict, column),
+                help = 'Testing the tooltip functionality',
                 min_value=0.0,
                 max_value=1.0,
                 value= 0.1,
