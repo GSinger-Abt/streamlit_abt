@@ -19,7 +19,7 @@ st.title('Madagascar - Weighted Vulnerability Index (VI) Explorer')
 st.header("StreamLit App Draft")
 
 st.markdown(
-    """ Use this tool to create a custom Weighted Vulnerability Index for Commune's in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+    """ Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
     The tool will take about 30 seconds to re-load depending on your internet connection. Choose a tab below and explore the interactive maps and data tables!
 
 ---
