@@ -343,7 +343,15 @@ with st.sidebar:
         #     # thematic_group_A = st.container(border=True)
         #     # st.header("Thematic Group A")
         for column in columns_to_normalize:
-            create_slider(column, widget_alias_dict)
+            weights_dict[f'{column}'] = st.slider(
+                # Use a dictionary to remap description
+                label = get_key_by_value(widget_alias_dict, column),
+                help = f'{column}',
+                min_value=0.0,
+                max_value=1.0,
+                value= 0.1,
+                step=0.1
+            )
             # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
