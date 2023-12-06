@@ -46,7 +46,7 @@ def define_processing_col_groups():
         ]
     # Create Thematic Lists of Indicators
     US_AID_cols = ['USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING']
-    Conflict_cols = ['CON_DFA1C','CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
+    Conflict_cols = ['CON_DFA1C'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Other_cols = ['IPC_AVC','RD_DENSUNREV','ST_SUM','DIS_CROPDMG', 'DIS_AFF']
     columns_to_normalize = US_AID_cols + Conflict_cols + Market_cols + Other_cols
@@ -69,18 +69,18 @@ def define_processing_col_groups():
     #     "RD_DENSUNREV",
     #     'CON_DFA1C',
     #     'USAID_VAC'
-    #     # 'CON_DFA2C',
-    #     # 'CON_NDFAC1',
-    #     # 'CON_NDFAC2',
-    #     # 'IPC_AVC',
-    #     # 'DIS_AFF','DIS_CROPDMG',
-    #     # 'MK_DIST','MK_VOLA','MK_ANOM',
-    #     # 'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
-    #     # 'RD_DENSUNREV',
-    #     # 'ST_SUM',
-    #     # 'CON_DFA1C',
-    #     #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
-    #   ]
+        # 'CON_DFA2C',
+        # 'CON_NDFAC1',
+        # 'CON_NDFAC2',
+        # 'IPC_AVC',
+        # 'DIS_AFF','DIS_CROPDMG',
+        # 'MK_DIST','MK_VOLA','MK_ANOM',
+        # 'USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING',
+        # 'RD_DENSUNREV',
+        # 'ST_SUM',
+        # 'CON_DFA1C',
+        #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
+      ]
     
     reverse = ['RD_DENSUNREV']
     return(core_columns, columns_to_normalize, reverse)
