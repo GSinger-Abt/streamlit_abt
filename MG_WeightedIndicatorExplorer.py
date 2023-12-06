@@ -339,12 +339,12 @@ def create_slider(column):
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
-        for index, theme_list in enumerate(thematic_lists):
-            container = st.container(border=True)
-            # thematic_group_A = st.container(border=True)
-            # st.header("Thematic Group A")
-            for column in columns_to_normalize:
-                create_slider(column)
+        # for index, theme_list in enumerate(thematic_lists):
+        #     container = st.container(border=True)
+        #     # thematic_group_A = st.container(border=True)
+        #     # st.header("Thematic Group A")
+        for column in columns_to_normalize:
+            create_slider(column)
     
             st.write(weights_dict)
         # Every form must have a submit button.
