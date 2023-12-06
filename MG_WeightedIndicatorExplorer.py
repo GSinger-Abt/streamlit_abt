@@ -223,13 +223,18 @@ def download_dataframe(df, csv_name, timestamp):
     csv_bytes = csv_str.encode('utf-8')
     b64 = base64.b64encode(csv_bytes)
     payload = b64.decode()
-    st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)
+    st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
 
-# Function to create pie chart
-def create_pie_chart(data):
-    fig = px.pie(data, names='Themes', values='Sum')
+def create_pie_chart(thematic_lists):
+    thematic_weights_dict = {}
+    for key, value in thematic_lists.items():
+        weight_cols = [item + "_weight" for item in value]
+        thematic_sum = weighted_df[weight_cols].iloc[0].sum()
+        thematic_weights_dict[key] = thematic_sum
+    data = pd.DataFrame(thematic_weights_dict), columns=['Key', 'Value'])
+    fig = px.pie(data, names='Key', values='Sum')
     st.plotly_chart(fig)
-
+    
 # Setup Streatmlit Tabs
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
@@ -315,17 +320,6 @@ with st.sidebar:
                     value= 0.1,
                     step=0.1
                 )                
-        # for column in columns_to_normalize:
-        #     weights_dict[f'{column}'] = st.slider(
-        #         # Use a dictionary to remap description
-        #         label = get_key_by_value(widget_alias_dict, column),
-        #         help = f'{column}',
-        #         min_value=0.0,
-        #         max_value=1.0,
-        #         value= 0.1,
-        #         step=0.1
-        #     )
-            # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
 
@@ -351,15 +345,8 @@ with tab2:
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
-                # Create Pie Chart
-                thematic_weights_dict = {}
-                for key, value in thematic_lists.items():
-                    st.write(value)
-                    weight_cols = [item + "_weight" for item in value]
-                    thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-                    thematic_weights_dict[key] = thematic_sum
-                st.text(thematic_weights_dict)
-                # create_pie_chart(pd.DataFrame(thematic_weights_dict))
+                create_pie_chart(thematic_lists)
+
         
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
 
