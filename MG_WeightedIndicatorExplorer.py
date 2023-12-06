@@ -225,15 +225,15 @@ def download_dataframe(df, csv_name, timestamp):
     payload = b64.decode()
     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
 
-def create_pie_chart(weighted_df, thematic_lists):
-    thematic_weights_dict = {}
-    for key, value in thematic_lists.items():
-        weight_cols = [item + "_weight" for item in value]
-        thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-        thematic_weights_dict[key] = thematic_sum
-    data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
-    fig = px.pie(data, names='Key', values='Value')
-    st.plotly_chart(fig)
+# def create_pie_chart(weighted_df, thematic_lists):
+#     thematic_weights_dict = {}
+#     for key, value in thematic_lists.items():
+#         weight_cols = [item + "_weight" for item in value]
+#         thematic_sum = weighted_df[weight_cols].iloc[0].sum()
+#         thematic_weights_dict[key] = thematic_sum
+#     data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
+#     fig = px.pie(data, names='Key', values='Value')
+#     st.plotly_chart(fig)
     
 # Setup Streatmlit Tabs
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
@@ -346,15 +346,15 @@ with tab2:
                 download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
                 
-                # thematic_weights_dict = {}
-                # for key, value in thematic_lists.items():
-                #     weight_cols = [item + "_weight" for item in value]
-                #     thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-                #     thematic_weights_dict[key] = thematic_sum
-                # data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
-                # fig = px.pie(data, names='Key', values='Value')
-                # st.plotly_chart(fig)
-                create_pie_chart(thematic_lists, weighted_df)
+                thematic_weights_dict = {}
+                for key, value in thematic_lists.items():
+                    weight_cols = [item + "_weight" for item in value]
+                    thematic_sum = weighted_df[weight_cols].iloc[0].sum()
+                    thematic_weights_dict[key] = thematic_sum
+                data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
+                fig = px.pie(data, names='Key', values='Value')
+                st.plotly_chart(fig)
+                # create_pie_chart(thematic_lists, weighted_df)
 
         
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
