@@ -80,7 +80,7 @@ def define_processing_col_groups():
         # 'ST_SUM',
         # 'CON_DFA1C',
         #'CON_DFA2C','CON_NDFAC1','CON_NDFAC2',
-      ]
+      # ]
     
     reverse = ['RD_DENSUNREV']
     return(core_columns, columns_to_normalize, reverse)
