@@ -356,7 +356,8 @@ with tab2:
                 for key, value in thematic_lists.items():
                     thematic_sum = weighted_df[value].iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
-                create_pie_chart(pd.DataFrame(thematic_weights_dict))
+                print(thematic_weights_dict)
+                # create_pie_chart(pd.DataFrame(thematic_weights_dict))
         
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
 
