@@ -340,7 +340,7 @@ with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
         for index, theme_list in enumerate(thematic_lists):
-            f'{index}_group' = st.container(border=True)
+            container = st.container(border=True)
             # thematic_group_A = st.container(border=True)
             # st.header("Thematic Group A")
             for column in columns_to_normalize:
