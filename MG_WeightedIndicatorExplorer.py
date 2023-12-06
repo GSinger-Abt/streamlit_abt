@@ -354,6 +354,7 @@ with tab2:
                 # Create Pie Chart
                 thematic_weights_dict = {}
                 for key, value in thematic_lists.items():
+                    st.write(value)
                     thematic_sum = weighted_df[value].iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
                 st.text(thematic_weights_dict)
