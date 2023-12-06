@@ -347,8 +347,8 @@ with st.sidebar:
             create_slider(column)
     
             # st.write(weights_dict)
-        # Every form must have a submit button.
-        submitted = st.form_submit_button('Update!')        
+    # Every form must have a submit button.
+    submitted = st.form_submit_button('Update!')        
 
 # Display Weighted Map and DataFrame
 with tab2:
