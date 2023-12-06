@@ -50,7 +50,7 @@ def define_processing_col_groups():
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Other_cols = ['IPC_AVC','RD_DENSUNREV','ST_SUM','DIS_CROPDMG', 'DIS_AFF']
     columns_to_normalize = US_AID_cols + Conflict_cols + Market_cols + Other_cols
-    # thematic_lists = [US_AID_cols, Conflict_cols,  Market_cols, Other_cols]
+    thematic_lists = [US_AID_cols, Conflict_cols,  Market_cols, Other_cols]
     # columns_to_normalize = [
     #     'USAID_PRECIP',
     #     'IPC_AVC',
@@ -83,7 +83,7 @@ def define_processing_col_groups():
       # ]
     
     reverse = ['RD_DENSUNREV']
-    return(core_columns, columns_to_normalize, reverse)
+    return(core_columns, columns_to_normalize, reverse, thematic_lists)
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
@@ -99,7 +99,7 @@ def create_zscore_index(sdf, weights_dict):
     is also in the reverse list, then the z score is multiplied by -1. After the normalized and weighted columns are created,
     they are summed to create the vulnerability index. Lastly, we calculate the percentile of this index to more readily compare
     the results of different weighting schemes.'''
-    core_columns, columns_to_normalize, reverse = define_processing_col_groups()
+    core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
     normalized_df = pd.DataFrame()
     # Loop through columns to normalize
     for column in columns_to_normalize:
@@ -258,7 +258,7 @@ def download_dataframe(df, csv_name, timestamp):
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
 # Define core columns and columns to rank with reverse exception
-core_columns, columns_to_normalize, reverse = define_processing_col_groups()
+core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
 
 # Load geopandas dataframe 
 gdf = load_geopandas_df(r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson')
