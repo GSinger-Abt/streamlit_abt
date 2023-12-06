@@ -321,7 +321,7 @@ widget_alias_dict = {
     }
 # # Sort Keys Alphabetically
 # widget_alias_dict = dict(sorted(widget_alias_dict.items()))
-def create_slider(column):
+def create_slider(column, widget_alias_dict):
     ''' The purpose of this function is to create a slider 
     for an input dataframe column.
     '''
@@ -343,7 +343,7 @@ with st.sidebar:
         #     # thematic_group_A = st.container(border=True)
         #     # st.header("Thematic Group A")
         for column in columns_to_normalize:
-            create_slider(column)
+            create_slider(column, widget_alias_dict)
             # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
