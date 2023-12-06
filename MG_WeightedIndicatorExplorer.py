@@ -334,6 +334,8 @@ with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
 
+        thematic_group_A = st.container(border=True)
+        st.header("Thematic Group A")
         for column in columns_to_normalize:
             create_slider(column)
 
