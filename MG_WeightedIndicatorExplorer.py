@@ -346,7 +346,7 @@ with st.sidebar:
         for column in columns_to_normalize:
             create_slider(column)
     
-            st.write(weights_dict)
+            # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
 
