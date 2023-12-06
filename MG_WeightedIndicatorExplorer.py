@@ -9,8 +9,7 @@ from datetime import datetime
 from scipy.stats import zscore
 import json
 from folium.plugins import Fullscreen
-import plotly.express as px
-
+import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title='Madagascar - Weighted Vulnerability Index (VI) Explorer',
