@@ -225,6 +225,11 @@ def download_dataframe(df, csv_name, timestamp):
     payload = b64.decode()
     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)
 
+# Function to create pie chart
+def create_pie_chart(data):
+    fig = px.pie(data, names='Themes', values='Sum')
+    st.plotly_chart(fig)
+
 # Setup Streatmlit Tabs
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
@@ -346,6 +351,10 @@ with tab2:
                 st.subheader(f"{map_title2} Dataframe:")
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 download_dataframe(weighted_df, map_title2, timestamp)
+                st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
+                # weighted_groups = 
+                # create_pie_chart(weighted_groups) 
+        
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
 
 # Initialize session state
