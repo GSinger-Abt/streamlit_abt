@@ -354,8 +354,7 @@ with tab2:
                 # Create Pie Chart
                 thematic_weights_dict = {}
                 for key, value in thematic_lists.items():
-                    filter_weighted_df = weighted_df.columns.isin(value)
-                    thematic_sum = filter_weighted_df.iloc[0].sum()
+                    thematic_sum = filter_weighted_df[value].iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
                 create_pie_chart(pd.DataFrame(thematic_weights_dict))
         
