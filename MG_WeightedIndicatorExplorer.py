@@ -353,7 +353,7 @@ with tab2:
                 st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
                 # Create Pie Chart
                 thematic_weights_dict = {}
-                for key, value in thematic_lists:
+                for key, value in thematic_lists.items():
                     filter_weighted_df = weighted_df.columns.isin(value)
                     thematic_sum = filter_weighted_df.iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
