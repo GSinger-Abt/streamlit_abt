@@ -315,23 +315,28 @@ widget_alias_dict = {
     }
 # # Sort Keys Alphabetically
 # widget_alias_dict = dict(sorted(widget_alias_dict.items()))
-
+def create_slider(column):
+    ''' The purpose of this function is to create a slider 
+    for an input dataframe column.
+    '''
+    weights_dict[f'{column}'] = st.slider(
+    # weights_dict[f'{column}_weight'] = st.slider(
+        # Use a dictionary to remap description
+        label = get_key_by_value(widget_alias_dict, column),
+        help = f'{column}',
+        min_value=0.0,
+        max_value=1.0,
+        value= 0.1,
+        step=0.1
+    )
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
 
         for column in columns_to_normalize:
-            weights_dict[f'{column}'] = st.slider(
-            # weights_dict[f'{column}_weight'] = st.slider(
-                # Use a dictionary to remap description
-                label = get_key_by_value(widget_alias_dict, column),
-                help = f'{column}',
-                min_value=0.0,
-                max_value=1.0,
-                value= 0.1,
-                step=0.1
-            )
+            create_slider(column)
+
         # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
