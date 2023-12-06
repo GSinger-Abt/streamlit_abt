@@ -99,7 +99,7 @@ def create_zscore_index(sdf, weights_dict):
     is also in the reverse list, then the z score is multiplied by -1. After the normalized and weighted columns are created,
     they are summed to create the vulnerability index. Lastly, we calculate the percentile of this index to more readily compare
     the results of different weighting schemes.'''
-    core_columns, columns_to_normalize, reverse = define_processing_col_groups()
+    core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
     normalized_df = pd.DataFrame()
     # Loop through columns to normalize
     for column in columns_to_normalize:
