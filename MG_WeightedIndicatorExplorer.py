@@ -50,6 +50,7 @@ def define_processing_col_groups():
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Other_cols = ['IPC_AVC','RD_DENSUNREV','ST_SUM','DIS_CROPDMG', 'DIS_AFF']
     columns_to_normalize = US_AID_cols + Conflict_cols + Market_cols + Other_cols
+    thematic_lists = [US_AID_cols, Conflict_cols,  Market_cols, Other_cols]
     # columns_to_normalize = [
     #     'USAID_PRECIP',
     #     'IPC_AVC',
@@ -82,7 +83,7 @@ def define_processing_col_groups():
     #   ]
     
     reverse = ['RD_DENSUNREV']
-    return(core_columns, columns_to_normalize, reverse)
+    return(core_columns, columns_to_normalize, reverse, thematic_lists)
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
@@ -257,7 +258,7 @@ def download_dataframe(df, csv_name, timestamp):
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
 
 # Define core columns and columns to rank with reverse exception
-core_columns, columns_to_normalize, reverse = define_processing_col_groups()
+core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
 
 # Load geopandas dataframe 
 gdf = load_geopandas_df(r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson')
@@ -338,13 +339,14 @@ def create_slider(column):
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
-
-        thematic_group_A = st.container(border=True)
-        st.header("Thematic Group A")
-        for column in columns_to_normalize:
-            create_slider(column)
-
-        # st.write(weights_dict)
+        for index, theme_list in enumerate(thematic_lists):
+            f'{index}_group' = st.container(border=True)
+            # thematic_group_A = st.container(border=True)
+            # st.header("Thematic Group A")
+            for column in columns_to_normalize:
+                create_slider(column)
+    
+            st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
 
