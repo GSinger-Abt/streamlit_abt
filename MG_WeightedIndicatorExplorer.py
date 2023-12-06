@@ -49,8 +49,11 @@ def define_processing_col_groups():
     Conflict_cols = ['CON_DFA1C'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Other_cols = ['IPC_AVC','RD_DENSUNREV','ST_SUM','DIS_CROPDMG', 'DIS_AFF']
-    columns_to_normalize = US_AID_cols + Conflict_cols + Market_cols + Other_cols
-    thematic_lists = [US_AID_cols, Conflict_cols,  Market_cols, Other_cols]
+    # columns_to_normalize = US_AID_cols + Conflict_cols + Market_cols + Other_cols
+    # Create Dictionary of Thematic Lists
+    thematic_lists = {"US_AID_cols": US_AID_cols, "Conflict_cols": Conflict_cols,  "Market_cols": Market_cols, "Other_cols": Other_cols}
+    columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
+
     # columns_to_normalize = [
     #     'USAID_PRECIP',
     #     'IPC_AVC',
