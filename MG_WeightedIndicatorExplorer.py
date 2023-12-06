@@ -327,34 +327,34 @@ with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
 
-        containers = {}
-        
-        for index, theme_list in enumerate(thematic_lists):
-            container_name = f"list_{index}"
-            containers[container_name] = st.container(border=True)
-            # thematic_group_A = st.container(border=True)
-            # st.header("Thematic Group A")
-            for column in theme_list:
-                weights_dict[f'{column}'] = st.slider(
-                    # Use a dictionary to remap description
-                    label = get_key_by_value(widget_alias_dict, column),
-                    help = f'{column}',
-                    min_value=0.0,
-                    max_value=1.0,
-                    value= 0.1,
-                    step=0.1
-                )
+        # containers = {}
+        # # THIS NEEDS WORK #!!!
+        # for index, theme_list in enumerate(thematic_lists):
+        #     container_name = f"list_{index}"
+        #     containers[container_name] = st.container(border=True)
+        #     # thematic_group_A = st.container(border=True)
+        #     # st.header("Thematic Group A")
+        #     for column in theme_list:
+        #         weights_dict[f'{column}'] = st.slider(
+        #             # Use a dictionary to remap description
+        #             label = get_key_by_value(widget_alias_dict, column),
+        #             help = f'{column}',
+        #             min_value=0.0,
+        #             max_value=1.0,
+        #             value= 0.1,
+        #             step=0.1
+        #         )
                 
-        # for column in columns_to_normalize:
-        #     weights_dict[f'{column}'] = st.slider(
-        #         # Use a dictionary to remap description
-        #         label = get_key_by_value(widget_alias_dict, column),
-        #         help = f'{column}',
-        #         min_value=0.0,
-        #         max_value=1.0,
-        #         value= 0.1,
-        #         step=0.1
-        #     )
+        for column in columns_to_normalize:
+            weights_dict[f'{column}'] = st.slider(
+                # Use a dictionary to remap description
+                label = get_key_by_value(widget_alias_dict, column),
+                help = f'{column}',
+                min_value=0.0,
+                max_value=1.0,
+                value= 0.1,
+                step=0.1
+            )
             # st.write(weights_dict)
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
