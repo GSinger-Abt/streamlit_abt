@@ -351,7 +351,7 @@ with tab2:
                     weight_cols = [item + "_weight" for item in value]
                     thematic_sum = weighted_df[weight_cols].iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
-                data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
+                data = pd.DataFrame(thematic_weights_dict)
                 st.dataframe(data)
                 fig = px.pie(data, names='Key', values='Value')
                 st.plotly_chart(fig)
