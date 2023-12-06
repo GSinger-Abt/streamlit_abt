@@ -326,8 +326,12 @@ widget_alias_dict = {
 with st.sidebar:
     with st.form("Weight Sliders"):
         st.title("Indicator Weight Slider")
+
+        containers = {}
+        
         for index, theme_list in enumerate(thematic_lists):
-            container = st.container(border=True)
+            container_name = f"list_{index}"
+            containers[container_name] = st.container(border=True)
             # thematic_group_A = st.container(border=True)
             # st.header("Thematic Group A")
             for column in theme_list:
