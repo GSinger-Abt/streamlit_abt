@@ -314,8 +314,7 @@ with st.sidebar:
                     max_value=1.0,
                     value= 0.1,
                     step=0.1
-                )
-                
+                )                
         # for column in columns_to_normalize:
         #     weights_dict[f'{column}'] = st.slider(
         #         # Use a dictionary to remap description
@@ -352,8 +351,13 @@ with tab2:
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
-                # weighted_groups = 
-                # create_pie_chart(weighted_groups) 
+                # Create Pie Chart
+                thematic_weights_dict = {}
+                for key, value in thematic_lists:
+                    filter_weighted_df = weighted_dfcolumns.isin(value)
+                    thematic_sum = filter_weighted_df.iloc[0].sum()
+                    thematic_weights_dict[key] = thematic_sum
+                create_pie_chart(pd.DataFrame(thematic_weights_dict))
         
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
 
