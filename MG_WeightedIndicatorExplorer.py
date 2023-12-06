@@ -326,7 +326,6 @@ def create_slider(column):
     for an input dataframe column.
     '''
     weights_dict[f'{column}'] = st.slider(
-    # weights_dict[f'{column}_weight'] = st.slider(
         # Use a dictionary to remap description
         label = get_key_by_value(widget_alias_dict, column),
         help = f'{column}',
