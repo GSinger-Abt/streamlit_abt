@@ -344,18 +344,16 @@ with tab2:
                 st.subheader(f"{map_title2} Dataframe:")
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 download_dataframe(weighted_df, map_title2, timestamp)
-                st.subheader('Thematic Influence on Weighted Vulnerability Index: Pie Chart')
-                
+                st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
+                # Create Pie Chart
                 thematic_weights_dict = {}
                 for key, value in thematic_lists.items():
                     weight_cols = [item + "_weight" for item in value]
                     thematic_sum = weighted_df[weight_cols].iloc[0].sum()
                     thematic_weights_dict[key] = thematic_sum
-                data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Theme', 'Weights'])
-                st.dataframe(data)
-                fig = px.pie(data, names='Theme', values='Weights')
+                data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Themes', 'Weights'])
+                fig = px.pie(data, names='Themes', values='Weights')
                 st.plotly_chart(fig)
-                # create_pie_chart(thematic_lists, weighted_df)
 
         
         st.toast('Hooray! Your map is ready!!', icon="🗺️")
