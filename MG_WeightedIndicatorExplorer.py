@@ -189,14 +189,16 @@ def render_map(df, choropleth_name):
     # folium_static(m1._repr_html_(), width=725, returned_objects=[])
     return(m1)
 
-def get_key_by_value(dictionary, search_value):
-  """
-  Returns the key in the dictionary corresponding to the provided search_value.
-  """
-  for key, value in dictionary.items():
-      if value == search_value:
-          return key
-  return None  # Return None if the value is not found
+def render_piechart(df, column_list):
+    # Create Pie Chart
+    thematic_weights_dict = {}
+    for key, value in thematic_lists.items():
+        weight_cols = [item + "_weight" for item in value]
+        thematic_sum = weighted_df[weight_cols].iloc[0].sum()
+        thematic_weights_dict[key] = thematic_sum
+    data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Themes', 'Weights'])
+    fig = px.pie(data, names='Themes', values='Weights')
+    st.plotly_chart(fig)
   
 def download_map(map_to_download, map_title, timestamp):
     '''Creates and displays a download link for map as HTML File.'''
@@ -206,7 +208,6 @@ def download_map(map_to_download, map_title, timestamp):
     html_bytes = map_html.encode('utf-8')
     b64 = base64.b64encode(html_bytes)
     payload = b64.decode()
-
     # Create a data URL
     data_url = f'data:text/html;base64,{payload}'
     # Create a download link using Streamlit
@@ -224,16 +225,6 @@ def download_dataframe(df, csv_name, timestamp):
     b64 = base64.b64encode(csv_bytes)
     payload = b64.decode()
     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
-
-# def create_pie_chart(weighted_df, thematic_lists):
-#     thematic_weights_dict = {}
-#     for key, value in thematic_lists.items():
-#         weight_cols = [item + "_weight" for item in value]
-#         thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-#         thematic_weights_dict[key] = thematic_sum
-#     data = pd.DataFrame(thematic_weights_dict, columns=['Key', 'Value'])
-#     fig = px.pie(data, names='Key', values='Value')
-#     st.plotly_chart(fig)
     
 # Setup Streatmlit Tabs
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
@@ -270,14 +261,13 @@ with tab1:
     with st.container():
         # Display the HTML components
         components.html(st.session_state.tab1_data['map_html'], width=800, height=500, scrolling=True)
-        
         # Display the dataframe
         st.subheader(f"{map_title} Dataframe:")
         st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
 
 # Create a dictionary to store the input widgets
 weights_dict = {}
-# Set Alias Dict
+# Set Alias Dict (This Dict is inverted later on)
 widget_alias_dict = {
     'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
     'Average IPC Score': 'IPC_AVC',
@@ -300,8 +290,6 @@ widget_alias_dict = {
     # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
     'Violence Against Civilians (Total)':'USAID_VAC',
     }
-# # Sort Keys Alphabetically
-# widget_alias_dict = dict(sorted(widget_alias_dict.items()))
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
@@ -312,9 +300,8 @@ with st.sidebar:
             st.subheader(key)
             for column in value:
                 weights_dict[f'{column}'] = st.slider(
-                    # Use a dictionary to remap description
+                    # Use the widget_alias_dict to remap the column names. 
                     label = {v: k for k, v in widget_alias_dict.items()}[column],
-                    # label = get_key_by_value(widget_alias_dict, column),
                     help = f'{column}',
                     min_value=0.0,
                     max_value=1.0,
@@ -346,18 +333,20 @@ with tab2:
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
-                # Create Pie Chart
-                thematic_weights_dict = {}
-                for key, value in thematic_lists.items():
-                    weight_cols = [item + "_weight" for item in value]
-                    thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-                    thematic_weights_dict[key] = thematic_sum
-                data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Themes', 'Weights'])
-                fig = px.pie(data, names='Themes', values='Weights')
-                st.plotly_chart(fig)
+                render_piechart(weighted_df, thematic_lists)
+                
+                # # Create Pie Chart
+                # thematic_weights_dict = {}
+                # for key, value in thematic_lists.items():
+                #     weight_cols = [item + "_weight" for item in value]
+                #     thematic_sum = weighted_df[weight_cols].iloc[0].sum()
+                #     thematic_weights_dict[key] = thematic_sum
+                # data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Themes', 'Weights'])
+                # fig = px.pie(data, names='Themes', values='Weights')
+                # st.plotly_chart(fig)
 
         
-        st.toast('Hooray! Your map is ready!!', icon="🗺️")
+        st.toast('The Weighted Vulnerability Index Tab has been updated!', icon="🗺️")
 
 # Initialize session state
 if 'tab3_data' not in st.session_state:
