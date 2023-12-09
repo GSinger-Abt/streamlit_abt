@@ -240,29 +240,6 @@ m1 = render_map(root_df, map_title)
 # Display the Folium map using st.components.html
 map_html = m1._repr_html_()
 
-# Initialize session state
-if 'tab1_data' not in st.session_state:
-    st.session_state.tab1_data = {'result': None, 'map_html': None, 'timestamp': None}
-
-# Display Unweighted Map and DataFrame
-with tab1:
-    st.subheader("Unweighted VI")
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # Check if the data for Tab 1 is already calculated
-    if st.session_state.tab1_data['result'] is None:        
-        # Store the data in session state
-        st.session_state.tab1_data['result'] = root_df
-        st.session_state.tab1_data['map_html'] = map_html
-        st.session_state.tab1_data['timestamp'] = timestamp
-
-    with st.container():
-        # Display the HTML components
-        components.html(st.session_state.tab1_data['map_html'], width=800, height=500, scrolling=True)
-        # Display the dataframe
-        st.subheader(f"{map_title} Dataframe:")
-        st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
-
 # Create a dictionary to store the input widgets
 weights_dict = {}
 # Set Alias Dict (This Dict is inverted later on)
@@ -309,6 +286,29 @@ with st.sidebar:
         # Every form must have a submit button.
         submitted = st.form_submit_button('Update!')        
 
+# Initialize session state
+if 'tab1_data' not in st.session_state:
+    st.session_state.tab1_data = {'result': None, 'map_html': None, 'timestamp': None}
+
+# Display Unweighted Map and DataFrame
+with tab1:
+    st.subheader("Unweighted VI")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Check if the data for Tab 1 is already calculated
+    if st.session_state.tab1_data['result'] is None:        
+        # Store the data in session state
+        st.session_state.tab1_data['result'] = root_df
+        st.session_state.tab1_data['map_html'] = map_html
+        st.session_state.tab1_data['timestamp'] = timestamp
+
+    with st.container():
+        # Display the HTML components
+        components.html(st.session_state.tab1_data['map_html'], width=800, height=500, scrolling=True)
+        # Display the dataframe
+        st.subheader(f"{map_title} Dataframe:")
+        st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
+        
 # Display Weighted Map and DataFrame
 with tab2:
     # Re-run .py if submitted and add map to tab2
