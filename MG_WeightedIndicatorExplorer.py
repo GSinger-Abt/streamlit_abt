@@ -30,7 +30,14 @@ st.markdown(
 
 st.link_button("Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md", help=None, type='secondary')
 
-   
+@st.cache_data  # 👈 Add the caching decorator
+def load_geopandas_df(geojson_path):
+    ''' This function loads a geopandas datframe based on a geojson URL.'''
+    # Load Dataframe with Initial Vulnerability Index (Default Weights = 0.1)
+    df = gpd.read_file(geojson_path)
+    df.dropna(inplace=True)
+    return(df)
+    
 # Define Processing Column Groups
 def define_processing_col_groups():
     ''' These column lists are used throughout the .py script. The core columns are returned with each dataframe output. 
@@ -55,14 +62,6 @@ def define_processing_col_groups():
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
     reverse = ['RD_DENSUNREV']
     return(core_columns, columns_to_normalize, reverse, thematic_lists)
-
-@st.cache_data  # 👈 Add the caching decorator
-def load_geopandas_df(geojson_path):
-    ''' This function loads a geopandas datframe based on a geojson URL.'''
-    # Load Dataframe with Initial Vulnerability Index (Default Weights = 0.1)
-    df = gpd.read_file(geojson_path)
-    df.dropna(inplace=True)
-    return(df)
     
 def create_zscore_index(sdf, weights_dict):
     ''' First, this function loops through the columns to normalize list, calculates a new column based on the z-score, 
@@ -97,7 +96,6 @@ def create_vulnerability_index(df, weights_dict):
     df.reset_index(inplace=True)
     df = gpd.GeoDataFrame(df, geometry = 'geometry')
     return(df)
-
 
 def render_map(df, choropleth_name):
     '''This function renders a choropleth map with custom html based on the geometry and vulerability index percentile columns'''
@@ -322,7 +320,7 @@ with tab2:
         m2 = render_map(weighted_df, map_title2)
         # Display the Folium map using st.components.html
         map_html2 = m2._repr_html_()
-        # Display Sample Dataframe
+        # Render the map, dataframe, and piechart on Weighted VI Tab
         with tab2:
             st.subheader(map_title2)
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -334,17 +332,6 @@ with tab2:
                 download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
                 render_piechart(weighted_df, thematic_lists)
-                
-                # # Create Pie Chart
-                # thematic_weights_dict = {}
-                # for key, value in thematic_lists.items():
-                #     weight_cols = [item + "_weight" for item in value]
-                #     thematic_sum = weighted_df[weight_cols].iloc[0].sum()
-                #     thematic_weights_dict[key] = thematic_sum
-                # data = pd.DataFrame(list(thematic_weights_dict.items()), columns=['Themes', 'Weights'])
-                # fig = px.pie(data, names='Themes', values='Weights')
-                # st.plotly_chart(fig)
-
         
         st.toast('The Weighted Vulnerability Index Tab has been updated!', icon="🗺️")
 
@@ -352,7 +339,7 @@ with tab2:
 if 'tab3_data' not in st.session_state:
     st.session_state.tab3_data = {'experience_builder_url': None}
     
-# Display Indicator Explorer
+# Display Indicator Explorer Tab
 with tab3:
     st.title("Indicator Explorer (ArcGIS)")
     experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
