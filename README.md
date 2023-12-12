@@ -6,3 +6,61 @@ For any questions, please email me at gideon_singer@abtassoc.com.
 
 Cheers,
 Gideon Singer, Ph.D.
+
+Vulnerability Index Application README
+
+This publication was produced as part of the LASER PULSE program, led by Purdue University and funded by the United States Agency for International Development (USAID). The views expressed in this publication do not necessarily reflect the views of USAID or the United States Government.
+
+
+The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities vulnerable to recurrent shocks. The Vulnerability Index Application allows users to calculate a Vulnerability Index using indicators from nine domains: Conflict, Disaster, Food Security/Crisis, Stunting, Market, Precipitation, Wealth, Road Density, Health Facility Access.
+
+Vulnerability Index
+Vulnerability can be assessed by relying on data about the potential sources of shocks. However not all areas face the same risks. For instance, in a more rural area, access to roads may play a larger role in vulnerability than in a more urban area. As such, a vulnerability index should permit flexibility in weighting the inputs to the index. 
+
+This application provides users the ability to calculate a vulnerability index for communes in four regions of Madagascar (Androy, Anosy, Atsimo Andrefana, and Atsimo Atsinanana) by calculating the z-score of the variables and using the following formula: 
+
+Vulnerability Index = z(Conflict Variables) + z(Food Security Variables) + z(Market Variables) + z(Wealth Index) + z(Health Facility Access) + z(Disaster Variables) + z(Stunting Variables) + z(Precipitation Variable) + z(Road Density)
+
+Application Interface
+
+The application has three tabs: Weighted VI, Unweighted VI, Indicator Explorer (ArcGIS)
+
+Weighted VI Calculates the vulnerability index using custom weights. 
+Unweighted VI Calculates the vulnerability index using equal weights across all variables
+Indicator Explorer (ArcGIS) Displays a map of the indicators without vulnerability index calculation
+
+
+Weighted VI
+Calculating a weighted Vulnerability Index
+1)	For each indicator listed in the left pane, move the slider to assign the desired weight and click. The UPDATE button
+2)	The app will calculate the vulnerability index (it may take up to 30 seconds) and return a map and a table showing a map, a table and a pie chart.
+
+3)	The map and table can be downloaded using the links underneath each one. (Note: the application will refresh the screen after a period of time which will erase the map and table)
+
+4)	The pie chart shows the influence of each domain on the vulnerability index. 
+
+Unweighted VI
+Calculates the vulnerability index using equal weights for all indicators
+1)	Clicking on the Unweighted VI tab displays a map and a table of vulnerability index calculated by assigning a weight of one.
+NOTE: The Indicator Weight Slider will still appear on the left of the screen but it will not affect the calculation of the index
+
+ 
+
+Indicator Explorer (ArcGIS)
+The indicator explorer provides the ability to produce maps of each individual indicator. It also allows users to add additional data to the map.
+
+Displaying layers
+Clicking on the check box next to the layer will display it on the map.
+
+ 
+Note: If turning on multiple layers, only the topmost layer is visible.
+
+
+Adding data 
+It is possible to add additional data to the indicator map using the Add Data button   in the upper right of the window.
+ 
+
+In the resulting window click on the button labeled “Click to add data” to display a pop-up window to search for available data on ArcGIS online, a url or a file on the local machine.
+
+Once a layer has been selected, it appears in the list of layers on the left of the ArcGIS map screen.
+
