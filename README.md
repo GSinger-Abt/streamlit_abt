@@ -1,7 +1,4 @@
 # Vulnerability Index Application: README
-
-This repo contains a python script and geojson file that feed into a Streamlit WebApp. This WebApp can be accessed via https://madagascar-wvi-v2.streamlit.app/. At present, the app is not publicly available. If you would like, you can fork this repo and create your own free version of the map using Streamlit.IO. 
-
 This publication was produced as part of the LASER PULSE program, led by Purdue University and funded by the United States Agency for International Development (USAID). The views expressed in this publication do not necessarily reflect the views of USAID or the United States Government.
 
 The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities vulnerable to recurrent shocks. The Vulnerability Index Application allows users to calculate a Vulnerability Index using indicators from nine domains: Conflict, Disaster, Food Security/Crisis, Stunting, Market, Precipitation, Wealth, Road Density, Health Facility Access.
@@ -50,6 +47,9 @@ Note: If turning on multiple layers, only the topmost layer is visible.
 
 ##### Adding data 
 It is possible to add additional data to the indicator map using the Add Data button   in the upper right of the window.
+
+
+*This repo contains a python script and geojson file that feed into a Streamlit WebApp. This WebApp can be accessed via https://madagascar-wvi-v2.streamlit.app/. At present, the app is not publicly available. If you would like, you can fork this repo and create your own free version of the map using Streamlit.IO.*
  
 
 In the resulting window click on the button labeled “Click to add data” to display a pop-up window to search for available data on ArcGIS online, a url or a file on the local machine.
