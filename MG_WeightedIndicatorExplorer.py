@@ -24,8 +24,8 @@ st.markdown(
     The tool will take about 30 seconds to re-load depending on your internet connection. Choose a tab below and explore the interactive maps and data tables!
 
 ---
-*Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 """
+    # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
 st.link_button("Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md", help=None, type='secondary')
@@ -198,31 +198,31 @@ def render_piechart(df, column_list):
     fig = px.pie(data, names='Themes', values='Weights')
     st.plotly_chart(fig)
   
-def download_map(map_to_download, map_title, timestamp):
-    '''Creates and displays a download link for map as HTML File.'''
-    html_name = f'{map_title} ({timestamp}).html'
-    map_html = map_to_download._repr_html_()
-    # Convert the HTML to bytes and encode as base64
-    html_bytes = map_html.encode('utf-8')
-    b64 = base64.b64encode(html_bytes)
-    payload = b64.decode()
-    # Create a data URL
-    data_url = f'data:text/html;base64,{payload}'
-    # Create a download link using Streamlit
-    st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map</a>', unsafe_allow_html=True)
+# def download_map(map_to_download, map_title, timestamp):
+#     '''Creates and displays a download link for map as HTML File.'''
+#     html_name = f'{map_title} ({timestamp}).html'
+#     map_html = map_to_download._repr_html_()
+#     # Convert the HTML to bytes and encode as base64
+#     html_bytes = map_html.encode('utf-8')
+#     b64 = base64.b64encode(html_bytes)
+#     payload = b64.decode()
+#     # Create a data URL
+#     data_url = f'data:text/html;base64,{payload}'
+#     # Create a download link using Streamlit
+#     st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map</a>', unsafe_allow_html=True)
 
-def download_dataframe(df, csv_name, timestamp):
-    '''Creates and displays a download link for the dataframe as a CSV File.'''
-    filename = f'{csv_name} ({timestamp}).csv'
-    dynamic_vars = {}
-    # Setting the DataFrame as the value for 'dynamic_var' key
-    dynamic_vars[f'df_{timestamp}'] = df.copy()
-    dynamic_vars[f'df_{timestamp}'].set_index('OBJECTID',inplace=True)
-    csv_str = dynamic_vars[f'df_{timestamp}'].loc[:, ~dynamic_vars[f'df_{timestamp}'].columns.isin(['geometry'])].to_csv(index=False)
-    csv_bytes = csv_str.encode('utf-8')
-    b64 = base64.b64encode(csv_bytes)
-    payload = b64.decode()
-    st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
+# def download_dataframe(df, csv_name, timestamp):
+#     '''Creates and displays a download link for the dataframe as a CSV File.'''
+#     filename = f'{csv_name} ({timestamp}).csv'
+#     dynamic_vars = {}
+#     # Setting the DataFrame as the value for 'dynamic_var' key
+#     dynamic_vars[f'df_{timestamp}'] = df.copy()
+#     dynamic_vars[f'df_{timestamp}'].set_index('OBJECTID',inplace=True)
+#     csv_str = dynamic_vars[f'df_{timestamp}'].loc[:, ~dynamic_vars[f'df_{timestamp}'].columns.isin(['geometry'])].to_csv(index=False)
+#     csv_bytes = csv_str.encode('utf-8')
+#     b64 = base64.b64encode(csv_bytes)
+#     payload = b64.decode()
+#     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
     
 # Setup Streatmlit Tabs
 tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
@@ -326,10 +326,10 @@ with tab2:
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             with st.container():
                 components.html(map_html2, width=800, height=500, scrolling = True)
-                download_map(m2, map_title2, timestamp)
+                # download_map(m2, map_title2, timestamp)
                 st.subheader(f"{map_title2} Dataframe:")
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
-                download_dataframe(weighted_df, map_title2, timestamp)
+                # download_dataframe(weighted_df, map_title2, timestamp)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
                 render_piechart(weighted_df, thematic_lists)
         
