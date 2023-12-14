@@ -328,7 +328,7 @@ with tab2:
             st.subheader(map_title2)
             timestamp2 = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             # Check if the data for Tab 1 is already calculated
-            if st.session_state.tab2_data['result'] is None:        
+            if st.session_state.tab2_data['result2'] is None:        
                 # Store the data in session state
                 st.session_state.tab2_data['result2'] = weighted_df
                 st.session_state.tab2_data['map_html2'] = map_html2
