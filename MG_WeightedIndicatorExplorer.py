@@ -308,7 +308,10 @@ with tab1:
         # Display the dataframe
         st.subheader(f"{map_title} Dataframe:")
         st.dataframe(st.session_state.tab1_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
-        
+
+# Initialize session state
+if 'tab2_data' not in st.session_state:
+    st.session_state.tab2_data = {'result': None, 'map_html': None, 'timestamp': None}       
 # Display Weighted Map and DataFrame
 with tab2:
     # Re-run .py if submitted and add map to tab2
@@ -323,13 +326,20 @@ with tab2:
         # Render the map, dataframe, and piechart on Weighted VI Tab
         with tab2:
             st.subheader(map_title2)
-            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            timestamp2 = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # Check if the data for Tab 1 is already calculated
+            if st.session_state.tab2_data['result'] is None:        
+                # Store the data in session state
+                st.session_state.tab2_data['result'] = weighted_df
+                st.session_state.tab2_data['map_html'] = map_html2
+                st.session_state.tab2_data['timestamp'] = timestamp2
+                
             with st.container():
-                components.html(map_html2, width=800, height=500, scrolling = True)
-                # download_map(m2, map_title2, timestamp)
+                components.html(st.session_state.tab2_data['map_html2'], width=800, height=500, scrolling = True)
+                # download_map(m2, map_title2, timestamp2)
                 st.subheader(f"{map_title2} Dataframe:")
-                st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
-                # download_dataframe(weighted_df, map_title2, timestamp)
+                st.dataframe(st.session_state.tab2_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
+                # download_dataframe(weighted_df, map_title2, timestamp2)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
                 render_piechart(weighted_df, thematic_lists)
         
