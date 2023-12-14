@@ -311,7 +311,7 @@ with tab1:
 
 # Initialize session state
 if 'tab2_data' not in st.session_state:
-    st.session_state.tab2_data = {'result': None, 'map_html': None, 'timestamp': None}       
+    st.session_state.tab2_data = {'result2': None, 'map_html2': None, 'timestamp2': None}       
 # Display Weighted Map and DataFrame
 with tab2:
     # Re-run .py if submitted and add map to tab2
@@ -330,15 +330,15 @@ with tab2:
             # Check if the data for Tab 1 is already calculated
             if st.session_state.tab2_data['result'] is None:        
                 # Store the data in session state
-                st.session_state.tab2_data['result'] = weighted_df
-                st.session_state.tab2_data['map_html'] = map_html2
-                st.session_state.tab2_data['timestamp'] = timestamp2
+                st.session_state.tab2_data['result2'] = weighted_df
+                st.session_state.tab2_data['map_html2'] = map_html2
+                st.session_state.tab2_data['timestamp2'] = timestamp2
                 
             with st.container():
-                components.html(st.session_state.tab2_data['map_html'], width=800, height=500, scrolling = True)
+                components.html(st.session_state.tab2_data['map_html2'], width=800, height=500, scrolling = True)
                 # download_map(m2, map_title2, timestamp2)
                 st.subheader(f"{map_title2} Dataframe:")
-                st.dataframe(st.session_state.tab2_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
+                st.dataframe(st.session_state.tab2_data['result2'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 # download_dataframe(weighted_df, map_title2, timestamp2)
                 st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
                 render_piechart(weighted_df, thematic_lists)
