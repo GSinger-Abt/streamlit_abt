@@ -335,7 +335,7 @@ with tab2:
                 st.session_state.tab2_data['timestamp'] = timestamp2
                 
             with st.container():
-                components.html(st.session_state.tab2_data['map_html2'], width=800, height=500, scrolling = True)
+                components.html(st.session_state.tab2_data['map_html'], width=800, height=500, scrolling = True)
                 # download_map(m2, map_title2, timestamp2)
                 st.subheader(f"{map_title2} Dataframe:")
                 st.dataframe(st.session_state.tab2_data['result'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
