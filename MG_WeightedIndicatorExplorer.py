@@ -270,7 +270,7 @@ widget_alias_dict = {
     'Number of Strategic Development Events':'USAID_SD',
     'Percent Children Stunted (Total)':'ST_SUM',
     'Prevalence of Stunting':'USAID_STUNTING',
-    "Road Density": "RD_DENSUNREV",
+    "Road Density (Reversed)": "RD_DENSUNREV",
     'Relative Wealth Index (Reversed)':'USAIDWEALTH',
     'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
     'Violence Against Civilians (Total)':'USAID_VAC',
