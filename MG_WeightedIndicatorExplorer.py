@@ -55,17 +55,23 @@ def define_processing_col_groups():
         ]
     
     # Create Thematic Lists of Indicators
+    Natural_cols = ['DIS_CROPDMG', 'DIS_AFF', 'USAID_PRECIP']
     Conflict_cols = ['CON_DFA1C','USAID_VAC',] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
+    IPC_Cols = ['IPC_AVC','USAID_IPC']
     Stunting_cols = ['ST_SUM','USAID_STUNTING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
-    USAID_cols = [ 'USAID_SD', 'USAID_IPC','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING']
-    Other_cols = ['IPC_AVC','RD_DENSUNREV','DIS_CROPDMG', 'DIS_AFF']
+    USAID_cols = [ 'USAID_SD', ,'USAIDWEALTH','USAID_PIF','USAID_WALKING']
+    Road_cols = ['RD_DENSUNREV']
     # Create Dictionary of Thematic Lists
-    thematic_lists = {"Conflict Indicators": Conflict_cols,
-                      "Stunting Indicators": Stunting_cols,
-                      "Market Indicators": Market_cols,
-                      "USAID Indicators": USAID_cols,
-                      "Other Indicators": Other_cols}
+    thematic_lists = {
+        "Natural Disasters": Natural_cols,
+        "Conflicts": Conflict_cols,
+        "IPC Category": IPC_Cols,
+        "DHS": Stunting_cols,
+        "Market Data": Market_cols,
+        "Road Network": Road_cols,
+        "USAID Indicators": USAID_cols
+    }
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
     reverse = ['RD_DENSUNREV']
     return(core_columns, columns_to_normalize, reverse, thematic_lists)
