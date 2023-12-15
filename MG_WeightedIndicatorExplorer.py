@@ -60,7 +60,7 @@ def define_processing_col_groups():
     IPC_Cols = ['IPC_AVC','USAID_IPC']
     Stunting_cols = ['ST_SUM','USAID_STUNTING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
-    USAID_cols = [ 'USAID_SD', ,'USAIDWEALTH','USAID_PIF','USAID_WALKING']
+    USAID_cols = [ 'USAID_SD','USAIDWEALTH','USAID_PIF','USAID_WALKING']
     Road_cols = ['RD_DENSUNREV']
     # Create Dictionary of Thematic Lists
     thematic_lists = {
