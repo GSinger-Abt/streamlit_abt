@@ -70,7 +70,7 @@ def define_processing_col_groups():
         "DHS": Stunting_cols,
         "Market Data": Market_cols,
         "Road Network": Road_cols,
-        "USAID Indicators": USAID_cols
+        "Other Indicators": USAID_cols
     }
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
     reverse = ['RD_DENSUNREV']
