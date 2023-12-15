@@ -53,12 +53,17 @@ def define_processing_col_groups():
         'geometry'
         ]
     # Create Thematic Lists of Indicators
-    USAID_cols = ['USAID_VAC', 'USAID_SD', 'USAID_IPC','USAID_STUNTING','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING']
-    Conflict_cols = ['CON_DFA1C'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
+    Conflict_cols = ['CON_DFA1C','USAID_VAC',] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
+    Stunting_cols = ['ST_SUM','USAID_STUNTING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
-    Other_cols = ['IPC_AVC','RD_DENSUNREV','ST_SUM','DIS_CROPDMG', 'DIS_AFF']
+    USAID_cols = [ 'USAID_SD', 'USAID_IPC','USAIDWEALTH','USAID_PIF','USAID_PRECIP','USAID_WALKING']
+    Other_cols = ['IPC_AVC','RD_DENSUNREV','DIS_CROPDMG', 'DIS_AFF']
     # Create Dictionary of Thematic Lists
-    thematic_lists = {"Conflict Indicators": Conflict_cols,  "Market Indicators": Market_cols, "Other Indicators": Other_cols,"USAID Indicators": USAID_cols}
+    thematic_lists = {"Conflict Indicators": Conflict_cols,
+                      "Stunting Indicators": Stunting_cols,
+                      "Market Indicators": Market_cols,
+                      "USAID Indicators": USAID_cols,
+                      "Other Indicators": Other_cols}
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
     reverse = ['RD_DENSUNREV']
     return(core_columns, columns_to_normalize, reverse, thematic_lists)
@@ -260,10 +265,10 @@ widget_alias_dict = {
     "Road Density": "RD_DENSUNREV",
     'Relative Wealth Index (Reversed)':'USAIDWEALTH',
     'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
+    'Violence Against Civilians (Total)':'USAID_VAC',
     # 'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
     # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
     # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
-    'Violence Against Civilians (Total)':'USAID_VAC',
     }
 
 # Create input widgets for each column with the column name as the description
