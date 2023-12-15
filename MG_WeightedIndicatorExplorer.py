@@ -45,6 +45,7 @@ def define_processing_col_groups():
     that z score function. For those columns, the resulting z score will be mulitplied by -1 to indicate a negative relationship
     with the other indicators. 
     '''
+    
     core_columns = [
         'OBJECTID',
         'ADM1_PCODE','ADM1_EN','ADM1_TYPE','ADM2_PCODE','ADM2_EN','ADM2_TYPE','ADM3_PCODE','ADM3_EN','ADM3_TYPE',
@@ -52,6 +53,7 @@ def define_processing_col_groups():
         'Pop2023','Pop2024',
         'geometry'
         ]
+    
     # Create Thematic Lists of Indicators
     Conflict_cols = ['CON_DFA1C','USAID_VAC',] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
     Stunting_cols = ['ST_SUM','USAID_STUNTING']
