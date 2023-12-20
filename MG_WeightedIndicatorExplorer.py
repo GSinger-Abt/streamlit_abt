@@ -268,28 +268,30 @@ map_html = m1._repr_html_()
 # Create a dictionary to store the input widgets
 weights_dict = {}
 # Set Alias Dict (This Dict is inverted later on)
-widget_alias_dict = {
-    'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
-    'Average IPC Scores from 2020-2023':'USAID_IPC',
-    'Average Prevalence of Insufficient Food Consumption':'USAID_PIF',
-    'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
-    'Crop Damage HA':'DIS_CROPDMG',
-    'Distance to Nearest Market (KM)': 'MK_DIST',
-    'Market Price Volatility Score':'MK_VOLA',
-    'Market Pricing Anomaly Score': 'MK_ANOM',
-    'Number of People Affected by Natural Disasters': 'DIS_AFF',
-    'Number of Strategic Development Events':'USAID_SD',
-    'Percent Children Stunted (Total)':'ST_SUM',
-    'Prevalence of Stunting':'USAID_STUNTING',
-    "Road Density (Reversed)": "RD_DENSUNREV",
-    'Relative Wealth Index (Reversed)':'USAIDWEALTH',
-    'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
-    'Violence Against Civilians (Total)':'USAID_VAC',
-    # 'Average IPC Score': 'IPC_AVC',
-    # 'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
-    # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
-    # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
-    }
+widget_alias_dict =
+{
+    'USAID_PRECIP': 'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season',
+    'USAID_IPC': 'Average IPC Scores from 2020-2023',
+    'USAID_PIF': 'Average Prevalence of Insufficient Food Consumption',
+    'USAID_WALKING': 'Average Walking Travel Time to Nearest Healthcare Facility',
+    'DIS_CROPDMG': 'Crop Damage HA',
+    'MK_DIST': 'Distance to Nearest Market (KM)',
+    'MK_VOLA': 'Market Price Volatility Score',
+    'MK_ANOM': 'Market Pricing Anomaly Score',
+    'DIS_AFF': 'Number of People Affected by Natural Disasters',
+    'USAID_SD': 'Number of Strategic Development Events',
+    'ST_SUM': 'Percent Children Stunted (Total)',
+    'USAID_STUNTING': 'Prevalence of Stunting',
+    'RD_DENSUNREV': "Road Density (Reversed)",
+    'USAIDWEALTH': 'Relative Wealth Index (Reversed)',
+    'CON_DFA1C': 'Violence Against Civilians from Dahalo Attacks',
+    'USAID_VAC': 'Violence Against Civilians (Total)',
+    # 'IPC_AVC': 'Average IPC Score',
+    # 'CON_DFA2C': 'Dahalo Flag Actor 2 (Count); Placeholder',
+    # 'CON_NDFAC1': 'Non-Dahalo Flag Actor 1 (Sum)',
+    # 'CON_NDFAC2': 'Non-Dahalo Flag Actor 2 (Sum)',
+}
+
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
@@ -299,10 +301,11 @@ with st.sidebar:
         for key, value in thematic_lists.items():
             st.subheader(key)
             # Sort columns by Alias Name
-            for column in sorted(value, key = lambda x: list(widget_alias_dict.keys()).index(x)):
+            for column in sorted(value):
                 weights_dict[f'{column}'] = st.slider(
                     # Use the widget_alias_dict to remap the column names. 
-                    label = {v: k for k, v in widget_alias_dict.items()}[column],
+                    # label = {v: k for k, v in widget_alias_dict.items()}[column],
+                    label = widget_alias_dict[column],
                     help = f'{column}',
                     min_value=0.0,
                     max_value=1.0,
