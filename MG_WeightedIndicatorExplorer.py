@@ -11,6 +11,13 @@ import json
 from folium.plugins import Fullscreen
 import plotly.express as px
 
+
+# The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
+geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
+experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
+codebook_url = "Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+read_me_url = "Click here to open additional instructions *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+
 st.set_page_config(
     page_title='Madagascar - Weighted Vulnerability Index (VI) Explorer',
     page_icon="🗺️",
@@ -28,7 +35,8 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md", help=None, type='secondary')
+st.link_button(codebook_url, help=None, type='secondary')
+st.link_button(read_me_url, help=None, type='secondary')
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
@@ -244,7 +252,7 @@ tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺�
 core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
 
 # Load geopandas dataframe 
-gdf = load_geopandas_df(r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson')
+gdf = load_geopandas_df(geojson_path)
 # Create unweighted vulnerability index dataframe
 root_df = create_vulnerability_index(gdf, weights_dict=None)
 # Load Map and Map HTML
@@ -367,7 +375,6 @@ if 'tab3_data' not in st.session_state:
 # Display Indicator Explorer Tab
 with tab3:
     st.title("Indicator Explorer (ArcGIS)")
-    experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
 
     # Check if the data for Tab 3 is already calculated
     if st.session_state.tab3_data['experience_builder_url'] is None:        
