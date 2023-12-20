@@ -62,23 +62,27 @@ def define_processing_col_groups():
         'geometry'
         ]
     
-    # Create Thematic Lists of Indicators
-    Natural_cols = ['DIS_CROPDMG', 'DIS_AFF', 'USAID_PRECIP']
-    Conflict_cols = ['CON_DFA1C','USAID_VAC',] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
-    IPC_Cols = ['IPC_AVC','USAID_IPC']
-    Stunting_cols = ['ST_SUM','USAID_STUNTING']
+    # Create Thematic Lists of Indicators  
+    Conflict_cols = ['CON_DFA1C','USAID_VAC','USAID_SD'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
+    Disaster_cols = ['DIS_CROPDMG', 'DIS_AFF']
+    Food_cols =  ['IPC_AVC','USAID_IPC''USAID_PIF']
+    Health_cols = [ 'USAID_WALKING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
-    USAID_cols = [ 'USAID_SD','USAIDWEALTH','USAID_PIF','USAID_WALKING']
+    Precip_cols =  ['USAID_PRECIP']
     Road_cols = ['RD_DENSUNREV']
+    Stunting_cols = ['ST_SUM','USAID_STUNTING']
+    Wealth_cols = ['USAIDWEALTH']
     # Create Dictionary of Thematic Lists
     thematic_lists = {
-        "Natural Disasters": Natural_cols,
-        "Conflicts": Conflict_cols,
-        "IPC Category": IPC_Cols,
-        "DHS": Stunting_cols,
-        "Market Data": Market_cols,
-        "Road Network": Road_cols,
-        "Other Indicators": USAID_cols
+        "Conflict": Conflict_cols,
+        "Disaster": Disaster_cols,
+        "Food Security/Crisis": Food_cols,
+        "Health Facility Access": Health_cols,
+        "Market": Market_cols,
+        "Precipitation": Precip_cols,
+        "Road Density": Road_cols,
+        "Stunting": Stunting_cols,
+        "Wealth" : Wealth_cols
     }
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
     reverse = ['RD_DENSUNREV']
