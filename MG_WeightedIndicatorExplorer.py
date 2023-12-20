@@ -268,8 +268,7 @@ map_html = m1._repr_html_()
 # Create a dictionary to store the input widgets
 weights_dict = {}
 # Set Alias Dict (This Dict is inverted later on)
-widget_alias_dict =
-{
+widget_alias_dict = {
     'USAID_PRECIP': 'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season',
     'USAID_IPC': 'Average IPC Scores from 2020-2023',
     'USAID_PIF': 'Average Prevalence of Insufficient Food Consumption',
