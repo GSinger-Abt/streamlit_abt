@@ -300,7 +300,7 @@ with st.sidebar:
         for key, value in thematic_lists.items():
             st.subheader(key)
             # Sort columns by Alias Name
-            for column in sorted(value, key=lambda x: my_dict[x]):
+            for column in sorted(value, key=lambda x: widget_alias_dict [x]):
                 weights_dict[f'{column}'] = st.slider(
                     # Use the widget_alias_dict to remap the column names. 
                     label = widget_alias_dict[column],
