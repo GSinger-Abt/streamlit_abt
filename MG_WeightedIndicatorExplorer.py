@@ -65,7 +65,7 @@ def define_processing_col_groups():
     # Create Thematic Lists of Indicators  
     Conflict_cols = ['CON_DFA1C','USAID_VAC','USAID_SD'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
     Disaster_cols = ['DIS_CROPDMG', 'DIS_AFF']
-    Food_cols =  ['IPC_AVC','USAID_IPC','USAID_PIF']
+    Food_cols =  ['USAID_IPC','USAID_PIF']
     Health_cols = [ 'USAID_WALKING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Precip_cols =  ['USAID_PRECIP']
@@ -270,7 +270,6 @@ weights_dict = {}
 # Set Alias Dict (This Dict is inverted later on)
 widget_alias_dict = {
     'Average Cumulative Precipitation per Square Kilometer during 2016 - 2023 Growing Season':'USAID_PRECIP',
-    'Average IPC Score': 'IPC_AVC',
     'Average IPC Scores from 2020-2023':'USAID_IPC',
     'Average Prevalence of Insufficient Food Consumption':'USAID_PIF',
     'Average Walking Travel Time to Nearest Healthcare Facility':'USAID_WALKING',
@@ -286,6 +285,7 @@ widget_alias_dict = {
     'Relative Wealth Index (Reversed)':'USAIDWEALTH',
     'Violence Against Civilians from Dahalo Attacks': 'CON_DFA1C',
     'Violence Against Civilians (Total)':'USAID_VAC',
+    # 'Average IPC Score': 'IPC_AVC',
     # 'Dahalo Flag Actor 2 (Count); Placeholder': 'CON_DFA2C',
     # 'Non-Dahalo Flag Actor 1 (Sum)': 'CON_NDFAC1',
     # 'Non-Dahalo Flag Actor 2 (Sum)': 'CON_NDFAC2',
