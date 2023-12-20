@@ -15,8 +15,8 @@ import plotly.express as px
 # The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
 experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
-codebook_url = "Click here to open Codebook *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
-read_me_url = "Click here to open additional instructions *PLACEHOLDER*", "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+read_me_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
 st.set_page_config(
     page_title='Madagascar - Weighted Vulnerability Index (VI) Explorer',
@@ -35,8 +35,8 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button(codebook_url, help=None, type='secondary')
-st.link_button(read_me_url, help=None, type='secondary')
+st.link_button("Click here to open Codebook *PLACEHOLDER*", codebook_url, help=None, type='secondary')
+st.link_button("Click here to open additional instructions *PLACEHOLDER*", read_me_url, help=None, type='secondary')
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
