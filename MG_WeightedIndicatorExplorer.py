@@ -65,7 +65,7 @@ def define_processing_col_groups():
     # Create Thematic Lists of Indicators  
     Conflict_cols = ['CON_DFA1C','USAID_VAC','USAID_SD'] #,'CON_DFA2C','CON_NDFAC1','CON_NDFAC2']
     Disaster_cols = ['DIS_CROPDMG', 'DIS_AFF']
-    Food_cols =  ['IPC_AVC','USAID_IPC''USAID_PIF']
+    Food_cols =  ['IPC_AVC','USAID_IPC','USAID_PIF']
     Health_cols = [ 'USAID_WALKING']
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Precip_cols =  ['USAID_PRECIP']
