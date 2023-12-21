@@ -44,7 +44,7 @@ st.markdown(
 )
 
 st.link_button("Open Instructions", read_me_url, help=None, type='primary')
-st.link_button("View Codebook", codebook_url, help=None, type='secondary')
+st.link_button("Download Codebook (.xlsx)", codebook_url, help=None, type='secondary')
 
 
 @st.cache_data  # 👈 Add the caching decorator
