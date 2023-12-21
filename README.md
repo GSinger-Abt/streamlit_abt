@@ -15,6 +15,8 @@ Vulnerability Index = z(Conflict Variables) + z(Food Security Variables) + z(Mar
 | ---------------------- | ---------------------------------------------------------- |
 | Conflict               | Violence Against Civilians from Dahalo Attacks               |
 |                        | Violence Against Civilians Total                            |
+| Disaster               | Number of People Affected by Natural Disaster
+|                        | Hectares of Crops Damaged by Natural Disaster              |            
 | Food Security/Crisis   | Average IPC Scores from 2020 – 2023                          |
 |                        | Average Prevalence of Insufficient Food Consumption         |
 | Market                 | Distance to Nearest Market                                  |
