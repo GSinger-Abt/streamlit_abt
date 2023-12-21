@@ -27,17 +27,12 @@ st.title('Madagascar - Weighted Vulnerability Index (VI) Explorer')
 st.header("StreamLit App Draft")
 
 st.markdown(
-    """ Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. 
-    
-    Although the overall vulnerability index in one commune may be similar to that of another, the communes may experience different types of risk. 
-    
+    """ Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. Although the overall vulnerability index in one commune may be similar to that of another, the communes may experience different types of risk. 
     For instance, in a more rural area, access to roads may play a larger role in vulnerability than in a more urban area. 
-    
-    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.
-    
-    Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
-
+    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.    
 ---
+Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+
 """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
