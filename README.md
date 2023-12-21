@@ -29,7 +29,7 @@ Vulnerability Index = z(Conflict Variables) + z(Food Security Variables) + z(Mar
 
 This application provides users the ability to calculate a vulnerability index for communes in four regions of Madagascar (Androy, Anosy, Atsimo Andrefana, and Atsimo Atsinanana). The resulting index is a weighted index that is derived by summing together the weighted z-scores of each indicator.
 
-Vulnerability Index = 
+$Vulnerability Index = 
     (wconflict var 1 * z(Conflict Variable 1)) + … + (wconflict var n * z(Conflict Variable n))
     + (wfood security var 1 * z(Food Security Variable 1)) + … + (wfood security var n * z(Food Security Variable n))
     + (wmarket var 1 * z(Market Variable 1)) + … + (wmarket var n * z(Market Variable n))
@@ -38,7 +38,7 @@ Vulnerability Index =
     + (wwealth var * z(Wealth Index))
     + (wprecipitation var * z(Precipitation Variable))
     + (whealth facility access var * z(Health Facility Access))
-    + (wroad density var * z(Road Density))
+    + (wroad density var * z(Road Density))$
 
 #### Application Interface
 
@@ -48,7 +48,7 @@ The application has three tabs: **Weighted VI, Unweighted VI, Indicator Explorer
 - **Unweighted VI Calculates**: Calculates the vulnerability index using equal weights across all variables.
 - **Indicator Explorer (ArcGIS)**: Displays a map of the indicators without a vulnerability index calculation.
 
-[Figure 1.png](https://github.com/GSinger-Abt/streamlit_abt/blob/main/Figure%201.png)
+[Figure 1.png](https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Figure%201.png)
 
 #### Weighted VI
 Calculating a weighted Vulnerability Index
