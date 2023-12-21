@@ -48,7 +48,7 @@ The application has three tabs: **Weighted VI, Unweighted VI, Indicator Explorer
 - **Unweighted VI Calculates**: Calculates the vulnerability index using equal weights across all variables.
 - **Indicator Explorer (ArcGIS)**: Displays a map of the indicators without a vulnerability index calculation.
 
-Figure 1.png
+[Figure 1.png](https://github.com/GSinger-Abt/streamlit_abt/blob/main/Figure%201.png)
 
 #### Weighted VI
 Calculating a weighted Vulnerability Index
