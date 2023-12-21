@@ -42,7 +42,7 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Click here to view additional instructions and resources", read_me_url, help=None, type='Primary')
+st.link_button("Click here to view additional instructions and resources", read_me_url, help=None, type='primary')
 st.link_button("Click here to open Codebook *PLACEHOLDER*", codebook_url, help=None, type='secondary')
 
 
