@@ -15,7 +15,7 @@ import plotly.express as px
 # The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
 experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
-codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
 read_me_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
 st.set_page_config(
@@ -37,14 +37,14 @@ st.markdown(
     Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. 
     To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
 
-    To learn more about this app and the underlying data, click one of the buttons below to open the app intructions or codebook.
+    To learn more about this app and the underlying data, click one of the buttons below to open the app intructions or codebook:
 
     """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Instructions", read_me_url, help=None, type='primary')
-st.link_button("Codebook", codebook_url, help=None, type='secondary')
+st.link_button("Open Instructions", read_me_url, help=None, type='primary')
+st.link_button("View Codebook", codebook_url, help=None, type='secondary')
 
 
 @st.cache_data  # 👈 Add the caching decorator
