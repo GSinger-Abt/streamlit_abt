@@ -53,7 +53,7 @@ The application has three tabs: **Weighted VI, Unweighted VI, Indicator Explorer
 Figure 1: Screenshot of application when first opened.
 
 #### Weighted VI
-<u>Calculating a weighted Vulnerability Index</u>
+_Calculating a Weighted Vulnerability Index_
 1)	For each indicator listed in the left pane, move the slider to assign the desired weight and click the **UPDATE** button at the bottom of the list of indicators to generate a map using the weights.
 2) The app will calculate the vulnerability index (it may take up to 30 seconds) and return a map and a table showing a map, a table and a pie chart.
 
@@ -64,30 +64,40 @@ Figure 2 - Resulting map and table after assigning weights
 4)	The pie chart shows the influence of each domain on the vulnerability index. 
 
 #### Unweighted VI
-Calculates the vulnerability index using equal weights for all indicators
-1)	Clicking on the Unweighted VI tab displays a map and a table of vulnerability index calculated by assigning a weight of one.
-NOTE: The Indicator Weight Slider will still appear on the left of the screen but it will not affect the calculation of the index
+The Unweighted VI tab calculates the vulnerability index using equal weights for all indicators
+1)	Clicking on the Unweighted VI tab displays a map and a table of vulnerability index calculated by assigning a weight of one to all indicators.
+NOTE: The Indicator Weight Slider will still appear on the left of the screen but it will not affect the calculation of the unweighted index.
 
+![Figure 3.png](https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Figure%203.png)
+Figure 3 – Screenshot of Un-Weighted Vulnerability Index map and table
  
-
 #### Indicator Explorer (ArcGIS)
 The indicator explorer provides the ability to produce maps of each individual indicator. It also allows users to add additional data to the map.
 
 ##### Displaying layers
 Clicking on the check box next to the layer will display it on the map.
 
+![Figure 4.png](https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Figure%204.png)
+Figure 4 – Screenshot of Indicator Explorer
  
 Note: If turning on multiple layers, only the topmost layer is visible.
 
 
 ##### Adding data 
-It is possible to add additional data to the indicator map using the Add Data button   in the upper right of the window.
+It is possible to add additional data to the indicator map using the Add Data button ![image](https://github.com/GSinger-Abt/streamlit_abt/assets/151070704/6999fcc0-8beb-4505-853a-f2d04814da03) in the upper right of the window.
 
+![image](https://github.com/GSinger-Abt/streamlit_abt/assets/151070704/dba0cbed-919d-494e-8b8a-a72be8993768)
+
+Figure 5 – Add data pane on Indicator Explorer page
+
+
+In the resulting window click on the button labeled “Click to add data” to display a pop-up window to search for available data on ArcGIS online, a url or a file on the local machine. Any data added will be only available during the current session.
+
+Once a layer has been selected, it appears in the list of layers on the left of the ArcGIS map screen.
+
+
+###### Other Notes:
 
 *This repo contains a python script and geojson file that feed into a Streamlit WebApp. This WebApp can be accessed via https://madagascar-wvi-v2.streamlit.app/. At present, the app is not publicly available. If you would like, you can fork this repo and create your own free version of the map using Streamlit.IO.*
  
-
-In the resulting window click on the button labeled “Click to add data” to display a pop-up window to search for available data on ArcGIS online, a url or a file on the local machine.
-
-Once a layer has been selected, it appears in the list of layers on the left of the ArcGIS map screen.
 
