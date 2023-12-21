@@ -27,16 +27,24 @@ st.title('Madagascar - Weighted Vulnerability Index (VI) Explorer')
 st.header("StreamLit App Draft")
 
 st.markdown(
-    """ Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
-    The tool will take about 30 seconds to re-load depending on your internet connection. Choose a tab below and explore the interactive maps and data tables!
+    """ Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. 
+    
+    Although the overall vulnerability index in one commune may be similar to that of another, the communes may experience different types of risk. 
+    
+    For instance, in a more rural area, access to roads may play a larger role in vulnerability than in a more urban area. 
+    
+    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.
+    
+    Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
 
 ---
 """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
+st.link_button("Click here to view additional instructions and resources", read_me_url, help=None, type='Primary')
 st.link_button("Click here to open Codebook *PLACEHOLDER*", codebook_url, help=None, type='secondary')
-st.link_button("Click here to open additional instructions *PLACEHOLDER*", read_me_url, help=None, type='secondary')
+
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
