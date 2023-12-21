@@ -29,8 +29,7 @@ Vulnerability Index = z(Conflict Variables) + z(Food Security Variables) + z(Mar
 
 This application provides users the ability to calculate a vulnerability index for communes in four regions of Madagascar (Androy, Anosy, Atsimo Andrefana, and Atsimo Atsinanana). The resulting index is a weighted index that is derived by summing together the weighted z-scores of each indicator.
 
-$$
-Vulnerability Index = 
+'Vulnerability Index = 
     (wconflict var 1 * z(Conflict Variable 1)) + … + (wconflict var n * z(Conflict Variable n))
     + (wfood security var 1 * z(Food Security Variable 1)) + … + (wfood security var n * z(Food Security Variable n))
     + (wmarket var 1 * z(Market Variable 1)) + … + (wmarket var n * z(Market Variable n))
@@ -40,7 +39,7 @@ Vulnerability Index =
     + (wprecipitation var * z(Precipitation Variable))
     + (whealth facility access var * z(Health Facility Access))
     + (wroad density var * z(Road Density))
-$$
+'
 
 #### Application Interface
 
@@ -51,14 +50,17 @@ The application has three tabs: **Weighted VI, Unweighted VI, Indicator Explorer
 - **Indicator Explorer (ArcGIS)**: Displays a map of the indicators without a vulnerability index calculation.
 
 ![Figure 1.png](https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Figure%201.png)
+Figure 1: Screenshot of application when first opened.
 
 #### Weighted VI
-Calculating a weighted Vulnerability Index
-1)	For each indicator listed in the left pane, move the slider to assign the desired weight and click. The UPDATE button
-2)	The app will calculate the vulnerability index (it may take up to 30 seconds) and return a map and a table showing a map, a table and a pie chart.
+<u>Calculating a weighted Vulnerability Index</u>
+1)	For each indicator listed in the left pane, move the slider to assign the desired weight and click the **UPDATE** button at the bottom of the list of indicators to generate a map using the weights.
+2) The app will calculate the vulnerability index (it may take up to 30 seconds) and return a map and a table showing a map, a table and a pie chart.
+
+![Figure 2.png](https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Figure%202.png)
+Figure 2 - Resulting map and table after assigning weights
 
 3)	The map and table can be downloaded using the links underneath each one. (Note: the application will refresh the screen after a period of time which will erase the map and table)
-
 4)	The pie chart shows the influence of each domain on the vulnerability index. 
 
 #### Unweighted VI
