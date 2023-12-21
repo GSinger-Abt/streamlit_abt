@@ -34,14 +34,17 @@ st.markdown(
     As such, a vulnerability index should permit flexibility in weighting the inputs to the index.    
     
     --- 
-    Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+    Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. 
+    To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+
+    To learn more about this app and the underlying data, click one of the buttons below to open the app intructions or codebook.
 
     """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Click here to view additional instructions and resources", read_me_url, help=None, type='primary')
-st.link_button("Click here to open Codebook *PLACEHOLDER*", codebook_url, help=None, type='secondary')
+st.link_button("Instructions", read_me_url, help=None, type='primary')
+st.link_button("Codebook", codebook_url, help=None, type='secondary')
 
 
 @st.cache_data  # 👈 Add the caching decorator
