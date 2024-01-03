@@ -37,14 +37,14 @@ st.markdown(
     Use this tool to create a custom Weighted Vulnerability Index for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. 
     To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
 
-    To learn more about this app and the underlying data, click one of the buttons below to open the app intructions or codebook:
+    BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
 
     """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Open Instructions", read_me_url, help=None, type='primary')
-st.link_button("Download Codebook (.xlsx)", codebook_url, help=None, type='secondary')
+st.link_button("Instructions", read_me_url, help=None, type='primary')
+st.link_button("Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
 
 
 @st.cache_data  # 👈 Add the caching decorator
@@ -259,7 +259,7 @@ def render_piechart(df, column_list):
 #     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
     
 # Setup Streatmlit Tabs
-tab2,tab1,tab3 = st.tabs(["🗺️ Weighted VI", "🗺️ Unweighted VI", "🗺️ Indicator Explorer (ArcGIS)"])
+tab2,tab1,tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer 🗺️ (ArcGIS)"])
 
 # Define core columns and columns to rank with reverse exception
 core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
@@ -328,7 +328,7 @@ if 'tab1_data' not in st.session_state:
 
 # Display Unweighted Map and DataFrame
 with tab1:
-    st.subheader("Unweighted VI")
+    st.subheader("Illustrative Example (equal weights)")
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Check if the data for Tab 1 is already calculated
@@ -355,7 +355,7 @@ with tab2:
         # Render Weighted Tab
         weighted_df = create_vulnerability_index(gdf, weights_dict)
         # Load Map and Map HTML
-        map_title2 = 'Weighted Vulnerability Index'
+        map_title2 = 'Index Maker'
         m2 = render_map(weighted_df, map_title2)
         # Display the Folium map using st.components.html
         map_html2 = m2._repr_html_()
