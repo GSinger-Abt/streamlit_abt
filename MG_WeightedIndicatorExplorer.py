@@ -259,7 +259,7 @@ def render_piechart(df, column_list):
 #     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
     
 # Setup Streatmlit Tabs
-tab2,tab1,tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer 🗺️ (ArcGIS)"])
+tab2,tab1,tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer"])
 
 # Define core columns and columns to rank with reverse exception
 core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
@@ -398,7 +398,7 @@ if 'tab3_data' not in st.session_state:
     
 # Display Indicator Explorer Tab
 with tab3:
-    st.title("Indicator Explorer (ArcGIS)")
+    st.title("Indicator Explorer")
 
     # Check if the data for Tab 3 is already calculated
     if st.session_state.tab3_data['experience_builder_url'] is None:        
