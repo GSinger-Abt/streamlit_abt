@@ -43,8 +43,8 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Instructions", read_me_url, help=None, type='primary')
-st.link_button("Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
+st.link_button("View Instructions", read_me_url, help=None, type='primary')
+st.link_button("Download Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
 
 
 @st.cache_data  # 👈 Add the caching decorator
