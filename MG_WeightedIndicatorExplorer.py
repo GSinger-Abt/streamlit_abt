@@ -329,6 +329,15 @@ if 'tab1_data' not in st.session_state:
 # Display Unweighted Map and DataFrame
 with tab1:
     st.subheader("Illustrative Example (equal weights)")
+    st.markdown("""
+    ---
+    
+    Note: This is not an endorsement of using equal weights for the indicators but is an illustrative example of what a map with equally weighted indicators looks like. To manually adjust the weights for each indicator, please navigate to the Index Maker tab and use the sliders to your left.
+
+    --- 
+     
+    """
+               )
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Check if the data for Tab 1 is already calculated
