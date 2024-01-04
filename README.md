@@ -96,10 +96,5 @@ Figure 5 – Add data pane on Indicator Explorer page
 In the resulting window click on the button labeled “Click to add data” to display a pop-up window to search for available data on ArcGIS online, a url or a file on the local machine. Any data added will be only available during the current session.
 
 Once a layer has been selected, it appears in the list of layers on the left of the ArcGIS map screen.
-
-
-###### Other Notes:
-
-*This repo contains a python script and geojson file that feed into a Streamlit WebApp. This WebApp can be accessed via https://madagascar-wvi-v2.streamlit.app/. At present, the app is not publicly available. If you would like, you can fork this repo and create your own free version of the map using Streamlit.IO.*
  
 
