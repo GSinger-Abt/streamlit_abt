@@ -14,7 +14,7 @@ import plotly.express as px
 
 # The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
-experience_builder_url = r'https://experience.arcgis.com/experience/342ca27b75774a02a318f6eb9bb47951'
+experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54437091b1cfa05ed389a9'
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
 read_me_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
