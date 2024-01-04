@@ -16,7 +16,7 @@ import plotly.express as px
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
 experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54437091b1cfa05ed389a9'
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
-read_me_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+instructions_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
 st.set_page_config(
     page_title='Madagascar - Weighted Index of Need (IoN) Explorer',
@@ -43,7 +43,7 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("View Instructions", read_me_url, help=None, type='primary')
+st.link_button("View Instructions", instructions_url, help=None, type='primary')
 st.link_button("Download Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
 
 
