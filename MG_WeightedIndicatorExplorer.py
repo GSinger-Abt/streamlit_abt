@@ -34,9 +34,27 @@ st.markdown(
     As such, a vulnerability index should permit flexibility in weighting the inputs to the index.    
     
     --- 
-    Use this tool to create a custom Weighted Index of Need for Communes in Madagascar by experimenting with the weights assigned to each vulnerability indicaor. 
-    To adjust the indicators, use the sliders to your left, scroll down, and hit the "Update!" button. 
+    How to use this tool:
+    - Index Maker:
+        Click the “Index Maker” tab to develop your custom weighted index. 
+        First, use the sliders on the left to assign each indicator a weight between 0 and 1. 
+        For example, if you believe that road density and drought are the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
+        The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. Once you have assigned weights, click “Update!” on the bottom left under the sliders. 
+        In a few moments, your customized map will update in the center of your screen. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue. 
+        If you scroll downward, you can view and download the underlying data including the weights that you have assigned, and compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are align with your perception of their importance.
+        
+        (Note: for further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.)
 
+    - Illusrative Example (Equal Weights):
+        On the second tab, you can view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
+        This can provide a useful comparison for the custom weighted versions you might create.
+
+    - Indicator Explorer:
+        Use the Indicator Explorer tab if you would like to browse the underlying data used to create the indicators for this index. 
+        To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
+        Note that the first dataset with a checked box will always appear as the top layer in the map. 
+        To see the legend, click the first red button in the top right of the tab with the bulleted list icon.
+        
     BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
 
     """
