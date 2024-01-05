@@ -63,8 +63,9 @@ st.markdown(
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
     
     *(Note that the first dataset with a checked box will always appear as the top layer in the map. To see the legend, click the first red button in the top right of the tab with the bulleted list icon.)*
-    
-    *BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.*
+
+    ---
+    BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
 
     """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
