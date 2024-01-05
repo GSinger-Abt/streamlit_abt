@@ -25,7 +25,7 @@ st.set_page_config(
 )
 st.title('Madagascar - Weighted Index of Need (IoN) Explorer')
 # st.header("StreamLit App Draft")
-
+st.subheader("Introduction:")
 st.markdown(
     """
     Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. 
@@ -51,11 +51,13 @@ st.markdown(
     If you scroll downward, you can view and download the underlying data including the weights that you have assigned, and compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are align with your perception of their importance.
         
     (Note: for further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.)
+    
 
     **Illusrative Example (Equal Weights):**
     
     On the second tab, you can view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
     This can provide a useful comparison for the custom weighted versions you might create.
+    
 
     **Indicator Explorer:**
     Use the Indicator Explorer tab if you would like to browse the underlying data used to create the indicators for this index. 
@@ -63,8 +65,7 @@ st.markdown(
     Note that the first dataset with a checked box will always appear as the top layer in the map. 
     To see the legend, click the first red button in the top right of the tab with the bulleted list icon.
     
-    ---    
-    BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
+    *BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.*
 
     """
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
