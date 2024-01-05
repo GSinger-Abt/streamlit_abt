@@ -53,7 +53,7 @@ st.markdown(
 
     **Illusrative Example (Equal Weights):**
     
-    - Clcik the second tab called "Illustrative Example" to view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
+    - Click the second tab called "Illustrative Example" to view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
     - This can provide a useful comparison for the custom weighted versions you might create.
     
 
