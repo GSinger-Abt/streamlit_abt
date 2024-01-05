@@ -31,11 +31,14 @@ st.markdown(
     Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. 
     Although the overall Index of Need in one commune may be similar to that of another, the communes may experience different types of risk. 
     For instance, in a more rural area, access to roads may play a larger role in vulnerability than in a more urban area. 
-    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.    
+    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.
+    """
     
     --- 
-    ##How to use this tool:##
+st.subheader("How to use this tool:")
     
+st.markdown(
+    """
     **Index Maker:**
     
     Click the “Index Maker” tab to develop your custom weighted index. 
