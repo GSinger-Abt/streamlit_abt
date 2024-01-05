@@ -49,7 +49,7 @@ st.markdown(
     - In a few moments, your customized map will update in the center of your screen. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue. 
     - If you scroll downward, you can view and download the underlying data including the weights that you have assigned, and compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are align with your perception of their importance.
         
-    *(Note: for further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.)*
+    *(Note: Please see the Data Dictionary, linked below, for further details on data sources and how the indicators are defined.)*
     
 
     **Illusrative Example (Equal Weights):**
@@ -62,7 +62,7 @@ st.markdown(
     - Use the Indicator Explorer tab if you would like to browse the underlying data used to create the indicators for this index. 
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
     
-    *(Note that the first dataset with a checked box will always appear as the top layer in the map. To see the legend, click the first red button in the top right of the tab with the bulleted list icon.)*
+    *(Note: The first dataset with a checked box will always appear as the top layer in the map. To see the legend, click the first red button in the top right of the tab with the bulleted list icon.)*
 
     ---
     BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
