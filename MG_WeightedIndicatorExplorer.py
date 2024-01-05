@@ -35,6 +35,7 @@ st.markdown(
     """
     
     --- 
+)
 st.subheader("How to use this tool:")
     
 st.markdown(
