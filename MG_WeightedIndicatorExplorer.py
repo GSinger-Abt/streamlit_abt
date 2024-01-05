@@ -35,8 +35,8 @@ st.markdown(
     
     --- 
     How to use this tool:
-    - Index Maker:
-        Click the “Index Maker” tab to develop your custom weighted index. 
+    **Index Maker:**
+        - Click the “Index Maker” tab to develop your custom weighted index. 
         First, use the sliders on the left to assign each indicator a weight between 0 and 1. 
         For example, if you believe that road density and drought are the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
         The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. Once you have assigned weights, click “Update!” on the bottom left under the sliders. 
