@@ -41,24 +41,26 @@ st.subheader("How to use this tool:")
     
 st.markdown(
     """
+    Below, these instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
+    
     **Index Maker:**
     
     - Click the “Index Maker” tab below to develop your custom weighted index. First, use the sliders on the left to assign each indicator a weight between 0 and 1. 
     - For example, if you believe that road density and drought are the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
-    - Once you have assigned weights, click "Update!" on the bottom left under the sliders. In a few moments, your cusotmized map will appear below. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue.
-    - If you scroll downward, you can view and download the underlying data including the weights that you have assigned and compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are aligned with your perception of their importance. 
+    - Once you have assigned weights, click "Update!" on the bottom left under the sliders. In a few moments, your customized map will appear below. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue.
+    - If you scroll downward, you can view and download the underlying data including the weights that you have assigned. Using the pie chart, you can also compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are aligned with your perception of their importance. 
         
     *Note: The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. For further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.*
     
 
-    **Illusrative Example (Equal Weights):**
+    **Illustrative Example (Equal Weights):**
     
     - Click the second tab called "Illustrative Example" to view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
     - This can provide a useful comparison for the custom weighted versions you might create.
     
 
     **Indicator Explorer:**
-    - Click the third tab called "Indicator Explore" if you would like to browse the underlying data used to create the indicators for this index. 
+    - Click the third tab called "Indicator Explorer" if you would like to browse the underlying data used to create the indicators for this index. 
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
     - To see the legend, click the first red button in the top right of the tab with the bulleted list icon.
     
