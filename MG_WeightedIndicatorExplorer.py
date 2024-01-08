@@ -11,10 +11,11 @@ import json
 from folium.plugins import Fullscreen
 import plotly.express as px
 
+# This Experience Builder App is hosted on ArcGIS Online (https://usaid.maps.arcgis.com/). 
+experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54437091b1cfa05ed389a9'
 
 # The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
-experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54437091b1cfa05ed389a9'
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
 instructions_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
