@@ -419,10 +419,10 @@ with tab2:
                 st.dataframe(weighted_df.set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 # st.dataframe(st.session_state.tab2_data['result2'].set_index('OBJECTID').drop(columns=['geometry']), width=800)
                 # download_dataframe(weighted_df, map_title2, timestamp2)
-                st.subheader('Thematic Influence on Weighted Vulnerability Index Pie Chart')
+                st.subheader('Thematic Influence on Weighted Index of Need Pie Chart')
                 render_piechart(weighted_df, thematic_lists)
         
-        st.toast('The Weighted Vulnerability Index Tab has been updated!', icon="🗺️")
+        st.toast('The Index Maker Tab has been updated!', icon="🗺️")
 
 # Initialize session state
 if 'tab3_data' not in st.session_state:
