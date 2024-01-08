@@ -314,7 +314,7 @@ widget_alias_dict = {
     'USAID_IPC': 'Average IPC Scores from 2020-2023',
     'USAID_PIF': 'Average Prevalence of Insufficient Food Consumption',
     'USAID_WALKING': 'Average Walking Travel Time to Nearest Healthcare Facility',
-    'DIS_CROPDMG': 'Crop Damage HA',e
+    'DIS_CROPDMG': 'Crop Damage HA',
     'MK_DIST': 'Distance to Nearest Market (KM)',
     'MK_VOLA': 'Market Price Volatility Score',
     'MK_ANOM': 'Market Pricing Anomaly Score',
