@@ -291,7 +291,7 @@ def render_piechart(df, column_list):
 #     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
     
 # Setup Streatmlit Tabs
-tab2,tab1,tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer"])
+tab2, tab1, tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer"])
 
 # Define core columns and columns to rank with reverse exception
 core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
@@ -331,7 +331,6 @@ widget_alias_dict = {
     # 'CON_NDFAC1': 'Non-Dahalo Flag Actor 1 (Sum)',
     # 'CON_NDFAC2': 'Non-Dahalo Flag Actor 2 (Sum)',
 }
-
 
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
