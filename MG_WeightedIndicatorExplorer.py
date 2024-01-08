@@ -301,7 +301,7 @@ gdf = load_geopandas_df(geojson_path)
 # Create unweighted vulnerability index dataframe
 root_df = create_vulnerability_index(gdf, weights_dict=None)
 # Load Map and Map HTML
-map_title = 'Unweighted Vulnerability Index'
+map_title = 'Unweighted Index of Need'
 m1 = render_map(root_df, map_title)
 # Display the Folium map using st.components.html
 map_html = m1._repr_html_()
@@ -314,7 +314,7 @@ widget_alias_dict = {
     'USAID_IPC': 'Average IPC Scores from 2020-2023',
     'USAID_PIF': 'Average Prevalence of Insufficient Food Consumption',
     'USAID_WALKING': 'Average Walking Travel Time to Nearest Healthcare Facility',
-    'DIS_CROPDMG': 'Crop Damage HA',
+    'DIS_CROPDMG': 'Crop Damage HA',e
     'MK_DIST': 'Distance to Nearest Market (KM)',
     'MK_VOLA': 'Market Price Volatility Score',
     'MK_ANOM': 'Market Pricing Anomaly Score',
