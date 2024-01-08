@@ -25,7 +25,6 @@ st.set_page_config(
     layout="wide",
 )
 st.title('Madagascar - Weighted Index of Need (IoN) Explorer')
-# st.header("StreamLit App Draft")
 st.subheader("Introduction:")
 st.markdown(
     """
