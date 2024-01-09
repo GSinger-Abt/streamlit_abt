@@ -74,7 +74,7 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("Download Detailed Instructions (.pdf)", instructions_url, help=None, type='primary')
+st.link_button("Download Full Instructions (.pdf)", instructions_url, help=None, type='primary')
 st.link_button("Download Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
 st.link_button("Download Read Me (.pdf)", readme_url, help=None, type='secondary')
 
