@@ -28,11 +28,8 @@ st.title('Madagascar - Weighted Index of Need (IoN) Explorer')
 st.subheader("Introduction:")
 st.markdown(
     """
-    Disparate levels of vulnerability to socio-economic and climate-based conditions within Madagascar expose communities to different levels and combinations of risks. 
-    Although the overall Index of Need in one commune may be similar to that of another, the communes may experience different types of risk. 
-    For instance, in a more rural area, access to roads may play a larger role in vulnerability than in a more urban area. 
-    As such, a vulnerability index should permit flexibility in weighting the inputs to the index.
-
+    The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities vulnerable to recurrent shocks. 
+    This tool allows users to calculate a custom Index of Need using indicators from nine domains relevant to ongoing vulnerability, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need. 
     
     --- 
     """
