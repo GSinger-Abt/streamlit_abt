@@ -18,6 +18,8 @@ experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
 instructions_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+readme_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+
 
 st.set_page_config(
     page_title='Madagascar - Weighted Index of Need (IoN) Explorer',
@@ -38,7 +40,7 @@ st.subheader("How to use this tool:")
     
 st.markdown(
     """
-    Below, these instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
+    Below, these breif instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
     
     **Index Maker:**
     
@@ -72,9 +74,9 @@ st.markdown(
     # *Once weights are submitted, you can download html versions of the Weighted map. Please note, you must open these files using a browser (e.g., Chrome. Edge, or FireFox).* 
 )
 
-st.link_button("View Instructions", instructions_url, help=None, type='primary')
+st.link_button("Download Detailed Instructions (.pdf)", instructions_url, help=None, type='primary')
 st.link_button("Download Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
-
+st.link_button("Download Read Me (.pdf)", readme_url, help=None, type='secondary')
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
