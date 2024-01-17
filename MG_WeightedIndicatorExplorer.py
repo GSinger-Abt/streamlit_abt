@@ -31,7 +31,7 @@ st.subheader("Introduction:")
 st.markdown(
     """
     The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities vulnerable to recurrent shocks. 
-    This tool allows users to calculate a custom Index of Need using indicators from nine domains relevant to ongoing vulnerability, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need. 
+    This tool allows users to calculate a custom Index of Need using indicators from nine themes relevant to ongoing vulnerability, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need. 
     
     --- 
     """
@@ -81,7 +81,7 @@ st.link_button("Download Read Me (.pdf)", readme_url, help=None, type='secondary
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
     ''' This function loads a geopandas datframe based on a geojson URL.'''
-    # Load Dataframe with Initial Vulnerability Index (Default Weights = 0.1)
+    # Load Dataframe with Initial Index of Need (Default Weights = 0.1)
     df = gpd.read_file(geojson_path)
     df.dropna(inplace=True)
     return(df)
@@ -132,7 +132,7 @@ def create_zscore_index(sdf, weights_dict):
     ''' First, this function loops through the columns to normalize list, calculates a new column based on the z-score, 
     and then multiplies it by the weight. The weight is either the default (0.1) or provided via a weights_dict. If a column
     is also in the reverse list, then the z score is multiplied by -1. After the normalized and weighted columns are created,
-    they are summed to create the vulnerability index. Lastly, we calculate the percentile of this index to more readily compare
+    they are summed to create the index of need. Lastly, we calculate the percentile of this index to more readily compare
     the results of different weighting schemes.'''
     core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_col_groups()
     normalized_df = pd.DataFrame()
@@ -147,16 +147,16 @@ def create_zscore_index(sdf, weights_dict):
         normalized_df[column + weight_col_suffix] = weight_value
         final_suffix = "_weighted_zscore"
         normalized_df[column + final_suffix] = normalized_df[column + normalized_col_suffix]  * normalized_df[column + weight_col_suffix]
-    normalized_df['Vulnerability_Index'] = round(normalized_df.filter(like=final_suffix, axis=1).sum(axis=1),4)
-    normalized_df['Vulnerability_Index_Percentile'] = round(normalized_df['Vulnerability_Index'].rank(pct=True) * 100)
+    normalized_df['index_of_need'] = round(normalized_df.filter(like=final_suffix, axis=1).sum(axis=1),4)
+    normalized_df['index_of_need_percentile'] = round(normalized_df['index_of_need'].rank(pct=True) * 100)
     result_df = pd.concat([sdf[core_columns], normalized_df], axis=1)
     return result_df
 
-def create_vulnerability_index(df, weights_dict):
-    '''This function creates a new dataframe with the vulnerability index and percentile that has columns sorted for easier viewing.'''
+def create_index_of_need(df, weights_dict):
+    '''This function creates a new dataframe with the index of need and percentile that has columns sorted for easier viewing.'''
     # Create Weighted Vulnerablity Index
     df = create_zscore_index(df , weights_dict=weights_dict)
-    df.set_index(['OBJECTID','ADM3_EN','Vulnerability_Index','Vulnerability_Index_Percentile'], inplace=True)
+    df.set_index(['OBJECTID','ADM3_EN','index_of_need','index_of_need_percentile'], inplace=True)
     df = df.reindex(sorted(df.columns), axis=1)
     df.reset_index(inplace=True)
     df = gpd.GeoDataFrame(df, geometry = 'geometry')
@@ -184,13 +184,13 @@ def render_map(df, choropleth_name):
         geo_data= df,
         name = choropleth_name,
         data = df,
-        columns=['ADM3_EN','Vulnerability_Index_Percentile'],
+        columns=['ADM3_EN','index_of_need_percentile'],
         # key_on='feature.id',
         key_on='feature.properties.ADM3_EN',
         fill_color='RdYlBu_r',
         fill_opacity=0.7,
         line_opacity=0.5,
-        legend_name='Vulnerability Index (Percentile)',
+        legend_name='Index of Need (Percentile)',
         # legend_name = 'Custom Legend',
         highlight = True,
         style_function=lambda x: {'weight': 1, 'color': 'white', 'fillOpacity': 1.0},
@@ -223,13 +223,13 @@ def render_map(df, choropleth_name):
         style_function=lambda x: {'fillOpacity': 0, 'color': 'transparent', 'weight': 0},
         highlight_function=lambda x: {'weight': 3, 'color': 'white'},
         tooltip=folium.GeoJsonTooltip(fields=
-          ['ADM3_EN','Vulnerability_Index','Vulnerability_Index_Percentile'], aliases=['Commune', "VI", "VI Percentile"]
+          ['ADM3_EN','index_of_need','index_of_need_percentile'], aliases=['Commune', "VI", "VI Percentile"]
                                       ),
         # popup=folium.GeoJsonPopup(
-        #     fields = ['ADM3_EN','Vulnerability_Index','Vulnerability_Index_Percentile'] + normalized_cols,
-        #     aliases=['Commune', "VI", "VI Percentile"] + normalized_cols,
+        #     fields = ['ADM3_EN','index_of_need','index_of_need_percentile'] + normalized_cols,
+        #     aliases=['Commune', "ION", "ION Percentile"] + normalized_cols,
         #     max_width=600, max_height=200, sticky=False
-        #     ),
+        #     ), 
         control= False
     ).add_to(m1)
     
@@ -287,7 +287,7 @@ def render_piechart(df, column_list):
 #     csv_bytes = csv_str.encode('utf-8')
 #     b64 = base64.b64encode(csv_bytes)
 #     payload = b64.decode()
-#     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted vulnerability index {timestamp}</a>', unsafe_allow_html=True)  
+#     st.markdown(f'<a download="{filename}" href="data:text/csv;base64,{payload}" target="_blank">Download CSV with updated indicator weights and weighted index of need {timestamp}</a>', unsafe_allow_html=True)  
     
 # Setup Streatmlit Tabs
 tab2, tab1, tab3 = st.tabs(["Index Maker", "Illustrative Example (equal weights)", "Indicator Explorer"])
@@ -297,8 +297,8 @@ core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_
 
 # Load geopandas dataframe 
 gdf = load_geopandas_df(geojson_path)
-# Create unweighted vulnerability index dataframe
-root_df = create_vulnerability_index(gdf, weights_dict=None)
+# Create unweighted index of need dataframe
+root_df = create_index_of_need(gdf, weights_dict=None)
 # Load Map and Map HTML
 map_title = 'Unweighted Index of Need'
 m1 = render_map(root_df, map_title)
@@ -392,7 +392,7 @@ with tab2:
     # Re-run .py if submitted and add map to tab2
     if submitted:       
         # Render Weighted Tab
-        weighted_df = create_vulnerability_index(gdf, weights_dict)
+        weighted_df = create_index_of_need(gdf, weights_dict)
         # Load Map and Map HTML
         map_title2 = 'Index Maker'
         m2 = render_map(weighted_df, map_title2)
