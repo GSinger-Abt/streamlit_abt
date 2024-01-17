@@ -110,7 +110,9 @@ def define_processing_col_groups():
     Market_cols = ['MK_DIST','MK_VOLA','MK_ANOM']
     Precip_cols =  ['USAID_PRECIP']
     Road_cols = ['RD_DENSUNREV']
-    Stunting_cols = ['ST_SUM','USAID_STUNTING']
+    Stunting_cols = ['ST_SUM',
+                     #'USAID_STUNTING'
+                    ]
     Wealth_cols = ['USAIDWEALTH']
     # Create Dictionary of Thematic Lists
     thematic_lists = {
@@ -320,7 +322,7 @@ widget_alias_dict = {
     'DIS_AFF': 'Number of People Affected by Natural Disasters',
     'USAID_SD': 'Number of Strategic Development Events',
     'ST_SUM': 'Percent Children Stunted (Total)',
-    'USAID_STUNTING': 'Prevalence of Stunting',
+    # 'USAID_STUNTING': 'Prevalence of Stunting',
     'RD_DENSUNREV': "Road Density (Reversed)",
     'USAIDWEALTH': 'Relative Wealth Index (Reversed)',
     'CON_DFA1C': 'Violence Against Civilians from Dahalo Attacks',
