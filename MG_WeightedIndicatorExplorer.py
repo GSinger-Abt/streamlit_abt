@@ -147,16 +147,16 @@ def create_zscore_index(sdf, weights_dict):
         normalized_df[column + weight_col_suffix] = weight_value
         final_suffix = "_weighted_zscore"
         normalized_df[column + final_suffix] = normalized_df[column + normalized_col_suffix]  * normalized_df[column + weight_col_suffix]
-    normalized_df['index_of_need'] = round(normalized_df.filter(like=final_suffix, axis=1).sum(axis=1),4)
-    normalized_df['index_of_need_percentile'] = round(normalized_df['index_of_need'].rank(pct=True) * 100)
+    normalized_df['INDEX_OF_NEED'] = round(normalized_df.filter(like=final_suffix, axis=1).sum(axis=1),4)
+    normalized_df['INDEX_OF_NEED_percentile'] = round(normalized_df['INDEX_OF_NEED'].rank(pct=True) * 100)
     result_df = pd.concat([sdf[core_columns], normalized_df], axis=1)
     return result_df
 
-def create_index_of_need(df, weights_dict):
+def create_INDEX_OF_NEED(df, weights_dict):
     '''This function creates a new dataframe with the index of need and percentile that has columns sorted for easier viewing.'''
     # Create Weighted Vulnerablity Index
     df = create_zscore_index(df , weights_dict=weights_dict)
-    df.set_index(['OBJECTID','ADM3_EN','index_of_need','index_of_need_percentile'], inplace=True)
+    df.set_index(['OBJECTID','ADM3_EN','INDEX_OF_NEED','INDEX_OF_NEED_percentile'], inplace=True)
     df = df.reindex(sorted(df.columns), axis=1)
     df.reset_index(inplace=True)
     df = gpd.GeoDataFrame(df, geometry = 'geometry')
@@ -184,7 +184,7 @@ def render_map(df, choropleth_name):
         geo_data= df,
         name = choropleth_name,
         data = df,
-        columns=['ADM3_EN','index_of_need_percentile'],
+        columns=['ADM3_EN','INDEX_OF_NEED_percentile'],
         # key_on='feature.id',
         key_on='feature.properties.ADM3_EN',
         fill_color='RdYlBu_r',
@@ -223,10 +223,10 @@ def render_map(df, choropleth_name):
         style_function=lambda x: {'fillOpacity': 0, 'color': 'transparent', 'weight': 0},
         highlight_function=lambda x: {'weight': 3, 'color': 'white'},
         tooltip=folium.GeoJsonTooltip(fields=
-          ['ADM3_EN','index_of_need','index_of_need_percentile'], aliases=['Commune', "VI", "VI Percentile"]
+          ['ADM3_EN','INDEX_OF_NEED','INDEX_OF_NEED_percentile'], aliases=['Commune', "VI", "VI Percentile"]
                                       ),
         # popup=folium.GeoJsonPopup(
-        #     fields = ['ADM3_EN','index_of_need','index_of_need_percentile'] + normalized_cols,
+        #     fields = ['ADM3_EN','INDEX_OF_NEED','INDEX_OF_NEED_percentile'] + normalized_cols,
         #     aliases=['Commune', "ION", "ION Percentile"] + normalized_cols,
         #     max_width=600, max_height=200, sticky=False
         #     ), 
@@ -298,7 +298,7 @@ core_columns, columns_to_normalize, reverse, thematic_lists = define_processing_
 # Load geopandas dataframe 
 gdf = load_geopandas_df(geojson_path)
 # Create unweighted index of need dataframe
-root_df = create_index_of_need(gdf, weights_dict=None)
+root_df = create_INDEX_OF_NEED(gdf, weights_dict=None)
 # Load Map and Map HTML
 map_title = 'Unweighted Index of Need'
 m1 = render_map(root_df, map_title)
@@ -392,7 +392,7 @@ with tab2:
     # Re-run .py if submitted and add map to tab2
     if submitted:       
         # Render Weighted Tab
-        weighted_df = create_index_of_need(gdf, weights_dict)
+        weighted_df = create_INDEX_OF_NEED(gdf, weights_dict)
         # Load Map and Map HTML
         map_title2 = 'Index Maker'
         m2 = render_map(weighted_df, map_title2)
