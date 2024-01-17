@@ -40,7 +40,7 @@ st.subheader("How to use this tool:")
     
 st.markdown(
     """
-    Below, these breif instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
+    Below, these brief instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
     
     **Index Maker:**
     
