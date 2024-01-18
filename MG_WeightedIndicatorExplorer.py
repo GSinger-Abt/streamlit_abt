@@ -60,7 +60,7 @@ st.markdown(
     **Indicator Explorer:**
     - Click the third tab called "Indicator Explorer" if you would like to browse the underlying data used to create the indicators for this index. 
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
-    - To understand how to interpret each map layer, see the legend by clicking on the first red button.
+    - To understand how to interpret each map layer, see the legend by clicking on the first red button in the top right of the tab with the bulleted list icon.
     
     *Note: The first dataset in the list with a checked box will always appear as the top layer in the map. To view a different layer, uncheck any boxes for other datasets that come earlier in the list.*
 
