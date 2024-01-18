@@ -53,12 +53,12 @@ st.markdown(
 
     **Illustrative Example (Equal Weights):**
     
-    - Click the second tab called "Illustrative Example" to view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
+    - Click the second tab called "Illustrative Example (equal weights)" to view an unweighted version of the index which assigns equal weights to all sixteen indicators. 
     - This can provide a useful comparison for the custom weighted versions you might create.
     
 
     **Indicator Explorer:**
-    - Click the third tab called "Indicator Explorer (equal weights)" if you would like to browse the underlying data used to create the indicators for this index. 
+    - Click the third tab called "Indicator Explorer" if you would like to browse the underlying data used to create the indicators for this index. 
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
     - To understand how to interpret each map layer, see the legend by clicking on the first red button.
     
