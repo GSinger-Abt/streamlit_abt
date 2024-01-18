@@ -30,8 +30,8 @@ st.title('Madagascar - Weighted Index of Need (IoN) Explorer')
 st.subheader("Introduction:")
 st.markdown(
     """
-    The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities vulnerable to recurrent shocks. 
-    This tool allows users to calculate a custom Index of Need using indicators from nine themes relevant to ongoing vulnerability, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need. 
+The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities affected by recurrent shocks. 
+This tool allows users to calculate a custom Index of Need using indicators from nine themes relevant as drivers of ongoing humanitarian need, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need.
     
     --- 
     """
@@ -40,16 +40,16 @@ st.subheader("How to use this tool:")
     
 st.markdown(
     """
-    Below, these brief instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
+    Below these brief instructions, you will find three tabs: Index Maker, Illustrative Example, and Indicator Explorer. This text provides an overview of how and when to use each tab's functionality.
     
     **Index Maker:**
     
-    - Click the “Index Maker” tab below to develop your custom weighted index. First, use the sliders on the left to assign each indicator a weight between 0 and 1. Weights should be tied to the importance of each indicator. Indicators that you have concluded (based on evidence) are the most important contributors to humanitarian need should be weighted closer to 1, and indicators that you have concluded are less important contributors to ongoing humanitarian needs should be weighted closer to 0. Also note that this index is designed to be highly flexible, and there are therefore no restrictions on total weight that can be assigned across indicators.
+    - Click the “Index Maker” tab below to develop your custom weighted index. First, use the sliders on the left to assign each indicator a weight between 0 and 1. Weights should be tied to the importance of each indicator. Indicators that you have concluded (based on evidence) are the most important contributors to humanitarian need should be weighted closer to 1, and indicators that you have concluded are less important contributors to ongoing humanitarian needs should be weighted closer to 0. Note that this index is designed to be highly flexible. Therefore, there are no restrictions or requirements on the total weight that must be assigned across indicators. For further background on index calculation and weighting methodology, refer to the Full Instructions linked below."
     - For example, if you believe that road density and drought are by far the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
     - Once you have assigned weights, click "Update!" on the bottom left under the sliders. In a few moments, your customized map will appear below. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue.
     - If you scroll downward, you can view and download the underlying data including the weights that you have assigned. Using the pie chart, you can also compare the weights that you have assigned by theme to ensure that the relative weights of each topic are aligned with your perception of their importance. 
         
-    *Note: The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. For further details on data sources and how the indicators are defined, please see the Data Dictionary linked below. For further details on index calculation and weighting, please see the Full Instructions linked below.*
+    *Note: The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. For further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.*
     
 
     **Illustrative Example (Equal Weights):**
@@ -59,9 +59,9 @@ st.markdown(
     
 
     **Indicator Explorer:**
-    - Click the third tab called "Indicator Explorer" if you would like to browse the underlying data used to create the indicators for this index. 
+    - Click the third tab called "Indicator Explorer (equal weights)" if you would like to browse the underlying data used to create the indicators for this index. 
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
-    - To see the legend, click the first red button in the top right of the tab with the bulleted list icon.
+    - To understand how to interpret each map layer, see the legend by clicking on the first red button.
     
     *Note: The first dataset in the list with a checked box will always appear as the top layer in the map. To view a different layer, uncheck any boxes for other datasets that come earlier in the list.*
 
