@@ -20,7 +20,6 @@ codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerabil
 instructions_url = "https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Weighted%20Index%20of%20Need%20Explorer%20Instructions.pdf"
 readme_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
 
-
 st.set_page_config(
     page_title='Madagascar - Weighted Index of Need (IoN) Explorer',
     page_icon="🗺️",
@@ -265,18 +264,18 @@ def render_piechart(df, column_list):
     fig = px.pie(data, names='Themes', values='Weights')
     st.plotly_chart(fig)
   
-# def download_map(map_to_download, map_title, timestamp):
-#     '''Creates and displays a download link for map as HTML File.'''
-#     html_name = f'{map_title} ({timestamp}).html'
-#     map_html = map_to_download._repr_html_()
-#     # Convert the HTML to bytes and encode as base64
-#     html_bytes = map_html.encode('utf-8')
-#     b64 = base64.b64encode(html_bytes)
-#     payload = b64.decode()
-#     # Create a data URL
-#     data_url = f'data:text/html;base64,{payload}'
-#     # Create a download link using Streamlit
-#     st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map</a>', unsafe_allow_html=True)
+def download_map(map_to_download, map_title, timestamp):
+    '''Creates and displays a download link for map as HTML File.'''
+    html_name = f'{map_title} ({timestamp}).html'
+    map_html = map_to_download._repr_html_()
+    # Convert the HTML to bytes and encode as base64
+    html_bytes = map_html.encode('utf-8')
+    b64 = base64.b64encode(html_bytes)
+    payload = b64.decode()
+    # Create a data URL
+    data_url = f'data:text/html;base64,{payload}'
+    # Create a download link using Streamlit
+    st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map</a>', unsafe_allow_html=True)
 
 # def download_dataframe(df, csv_name, timestamp):
 #     '''Creates and displays a download link for the dataframe as a CSV File.'''
