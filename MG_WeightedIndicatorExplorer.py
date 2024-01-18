@@ -19,6 +19,7 @@ geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/Madagasca
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/Vulnerability%20Index%20Data%20Dictionary%2020231220.xlsx"
 instructions_url = "https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Weighted%20Index%20of%20Need%20Explorer%20Instructions.pdf"
 readme_url = "https://github.com/GSinger-Abt/streamlit_abt/blob/main/README.md"
+logo_url = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/StreamlitApp_Logos.jpg'
 
 st.set_page_config(
     page_title='Madagascar - Weighted Index of Need (IoN) Explorer',
@@ -439,4 +440,4 @@ with tab3:
     st.link_button('Click here to open the Indicator Explorer in another window.', experience_builder_url, type="primary")
     components.iframe(st.session_state.tab3_data['experience_builder_url'], width = 1400, height = 800, scrolling = True)
 
-st.image('https://github.com/GSinger-Abt/streamlit_abt/blob/main/StreamlitApp_Logos.jpg')
+st.image(logo_url)
