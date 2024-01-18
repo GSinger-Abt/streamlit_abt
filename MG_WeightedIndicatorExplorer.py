@@ -44,12 +44,12 @@ st.markdown(
     
     **Index Maker:**
     
-    - Click the “Index Maker” tab below to develop your custom weighted index. First, use the sliders on the left to assign each indicator a weight between 0 and 1. 
-    - For example, if you believe that road density and drought are the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
+    - Click the “Index Maker” tab below to develop your custom weighted index. First, use the sliders on the left to assign each indicator a weight between 0 and 1. Weights should be tied to the importance of each indicator. Indicators that you have concluded (based on evidence) are the most important contributors to humanitarian need should be weighted closer to 1, and indicators that you have concluded are less important contributors to ongoing humanitarian needs should be weighted closer to 0. Also note that this index is designed to be highly flexible, and there are therefore no restrictions on total weight that can be assigned across indicators.
+    - For example, if you believe that road density and drought are by far the most important drivers of need, you might choose to weight these indicators as 1.0 or 0.9 and assign relatively lower weights to other indicators. 
     - Once you have assigned weights, click "Update!" on the bottom left under the sliders. In a few moments, your customized map will appear below. Communes with the highest level of need will appear as red and communes with the lowest level of need will appear as blue.
-    - If you scroll downward, you can view and download the underlying data including the weights that you have assigned. Using the pie chart, you can also compare the relative weights that you have assigned by theme to ensure that the relative weights of each topic are aligned with your perception of their importance. 
+    - If you scroll downward, you can view and download the underlying data including the weights that you have assigned. Using the pie chart, you can also compare the weights that you have assigned by theme to ensure that the relative weights of each topic are aligned with your perception of their importance. 
         
-    *Note: The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. For further details on data sources and how the indicators are defined, please see the Data Dictionary linked below.*
+    *Note: The indicators are organized by themes: Conflict, Disaster, Food Security/Crisis, Health Facility Access, Market, Precipitation, Road Density, Stunting, Wealth. For further details on data sources and how the indicators are defined, please see the Data Dictionary linked below. For further details on index calculation and weighting, please see the Full Instructions linked below.*
     
 
     **Illustrative Example (Equal Weights):**
@@ -63,7 +63,7 @@ st.markdown(
     - To view a data layer, you can click the arrow to the left of the relevant theme to reveal a dropdown menu and then click the checkbox next to the dataset you are interested in. 
     - To see the legend, click the first red button in the top right of the tab with the bulleted list icon.
     
-    *Note: The first dataset with a checked box will always appear as the top layer in the map. To view another layer, uncheck this box.*
+    *Note: The first dataset in the list with a checked box will always appear as the top layer in the map. To view a different layer, uncheck any boxes for other datasets that come earlier in the list.*
 
     ---
     BHA strongly suggests that applicants read the full instructions provided first in order to fully understand and make use of the geospatial mapping tool.
@@ -439,5 +439,9 @@ with tab3:
         
     st.link_button('Click here to open the Indicator Explorer in another window.', experience_builder_url, type="primary")
     components.iframe(st.session_state.tab3_data['experience_builder_url'], width = 1400, height = 800, scrolling = True)
-
+st.markdown(
+    """
+    *This application was produced as part of a buy-in from USAID/BHA/TPQ/SPADe into the Long-Term Assistance and Services for Research (LASER) project currently in place between USAID/DDI/ITR/R and Purdue University under a cooperative agreement. This project has been executed by Abt Global LLC under a subcontract with Purdue University.*
+    """
+)
 st.image(logo_url, width = 640)
