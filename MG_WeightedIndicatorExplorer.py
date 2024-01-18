@@ -440,4 +440,4 @@ with tab3:
     st.link_button('Click here to open the Indicator Explorer in another window.', experience_builder_url, type="primary")
     components.iframe(st.session_state.tab3_data['experience_builder_url'], width = 1400, height = 800, scrolling = True)
 
-st.image(logo_url, width = 200)
+st.image(logo_url, width = 640)
