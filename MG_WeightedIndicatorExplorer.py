@@ -275,7 +275,7 @@ def download_map(map_to_download, map_title, timestamp):
     # Create a data URL
     data_url = f'data:text/html;base64,{payload}'
     # Create a download link using Streamlit
-    st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map</a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="{data_url}" download="{html_name}" target="_blank">Click to Download Map as an HTML File</a>', unsafe_allow_html=True)
 
 # def download_dataframe(df, csv_name, timestamp):
 #     '''Creates and displays a download link for the dataframe as a CSV File.'''
