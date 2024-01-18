@@ -127,7 +127,7 @@ def define_processing_col_groups():
         "Wealth" : Wealth_cols
     }
     columns_to_normalize = [item for sublist in thematic_lists.values() for item in sublist]
-    reverse = ['RD_DENSUNREV']
+    reverse = ['RD_DENSUNREV', 'USAID_PRECIP']
     return(core_columns, columns_to_normalize, reverse, thematic_lists)
     
 def create_zscore_index(sdf, weights_dict):
