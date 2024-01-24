@@ -332,6 +332,30 @@ widget_alias_dict = {
     # 'CON_NDFAC2': 'Non-Dahalo Flag Actor 2 (Sum)',
 }
 
+# Set Alias Dict (This Dict is inverted later on)
+hover_source_dict = {
+    'USAID_PRECIP': 'Climate Hazards Group InfraRed Precipitation with Station Data (CHIRPS) Daily via Google Earth Engine (GEE) 2016-2023',
+    'USAID_IPC': 'Famine Early Warning Systems Network (FEWS-NET) 2020-2023',
+    'USAID_PIF': 'World Food Programme 2022',
+    'USAID_WALKING': 'USAID GeoCenter Analysis using data from the Malaria Atlas Project 2019',
+    'DIS_CROPDMG': 'Disater Information Management System (DesInventar) 2004-2023',
+    'MK_DIST': 'World Food Programme 2023',
+    'MK_VOLA': 'World Food Programme 2018-2023',
+    'MK_ANOM': 'World Food Programme 2018-2023',
+    'DIS_AFF': 'Disater Information Management System (DesInventar) 2004-2023',
+    'USAID_SD': 'Armed Conflict Location & Event Data (ACLED) Project 2018-2023',
+    'ST_SUM': 'Demographic and Health Surveys (DHS) 2021',
+    # 'USAID_STUNTING': '',
+    'RD_DENSUNREV': 'OpenStreetMap 2023',
+    'USAIDWEALTH': 'UC Berkeley Data Intensive Development Lab 2022',
+    'CON_DFA1C': 'Armed Conflict Location & Event Data (ACLED) Project 2018-2023',
+    'USAID_VAC': 'Armed Conflict Location & Event Data (ACLED) Project 2018-2023',
+    # 'IPC_AVC': 'Average IPC Score',
+    # 'CON_DFA2C': '',
+    # 'CON_NDFAC1': '',
+    # 'CON_NDFAC2': '',
+}
+
 # Create input widgets for each column with the column name as the description
 with st.sidebar:
     with st.form("Weight Sliders"):
@@ -344,7 +368,7 @@ with st.sidebar:
                 weights_dict[f'{column}'] = st.slider(
                     # Use the widget_alias_dict to remap the column names. 
                     label = widget_alias_dict[column],
-                    help = f'Variable Name: {column}, \nSource: TEST_SOURCE, \nYear: 2024',
+                    help = f'Variable Name: {column} | Source: {hover_source_dict[column]}',
                     min_value=0.0,
                     max_value=1.0,
                     value= 0.1,
