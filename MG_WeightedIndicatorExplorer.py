@@ -17,7 +17,7 @@ experience_builder_url = r'https://experience.arcgis.com/experience/7a2860e06a54
 # The following variables are URL references that will need to be updated if this python script is cloned in another GitHub Repo. 
 geojson_path = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/MadagascarCommunes_VI_Analysis_v3.geojson'
 codebook_url = "https://github.com/GSinger-Abt/streamlit_abt/raw/main/20240124_Vulnerability%20Index%20Data%20Dictionary_Revised.xlsx"
-instructions_url = "https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/Weighted%20Index%20of%20Need%20Explorer%20Instructions.pdf"
+instructions_url = "https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/20240124_Readme%201_Final.pdf"
 readme_url = "https://raw.githubusercontent.com/GSinger-Abt/streamlit_abt/main/20240124_README%202%20_Final.pdf"
 logo_url = r'https://github.com/GSinger-Abt/streamlit_abt/raw/main/StreamlitApp_Logos.jpg'
 
