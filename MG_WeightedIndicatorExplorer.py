@@ -344,7 +344,7 @@ with st.sidebar:
                 weights_dict[f'{column}'] = st.slider(
                     # Use the widget_alias_dict to remap the column names. 
                     label = widget_alias_dict[column],
-                    help = f'Variable Name: {column}, Source: TEST_SOURCE, Year: 2024',
+                    help = f'Variable Name: {column}, \nSource: TEST_SOURCE, \nYear: 2024',
                     min_value=0.0,
                     max_value=1.0,
                     value= 0.1,
