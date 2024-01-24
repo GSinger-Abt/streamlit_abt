@@ -75,7 +75,7 @@ st.markdown(
 
 st.link_button("Download Full Instructions (.pdf)", instructions_url, help=None, type='primary')
 st.link_button("Download Data Dictionary (.xlsx)", codebook_url, help=None, type='secondary')
-st.link_button("Download Read Me (.pdf)", readme_url, help=None, type='secondary')
+st.link_button("Download Read Me for Advanced Users (.pdf)", readme_url, help=None, type='secondary')
 
 @st.cache_data  # 👈 Add the caching decorator
 def load_geopandas_df(geojson_path):
