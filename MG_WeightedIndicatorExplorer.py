@@ -33,7 +33,7 @@ st.markdown(
 The USAID Bureau for Humanitarian Assistance (BHA) seeks to reduce the need for ongoing and future food and nutrition security humanitarian assistance in Madagascar and build resilience among households and communities affected by recurrent shocks. 
 This tool allows users to calculate a custom Index of Need using indicators from nine themes relevant as drivers of ongoing humanitarian need, and then use this information to identify and strategically target assistance toward the communes within the country with the highest degree of need.
     
-    --- 
+--- 
     """
 )
 st.subheader("How to use this tool:")
