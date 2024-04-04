@@ -6,11 +6,11 @@ leaflet_map_html = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Map</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Draw Example</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
     <style>
         #map { height: 400px; }
     </style>
@@ -23,10 +23,40 @@ leaflet_map_html = """
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
+
+        // FeatureGroup is where we will store editable layers
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            },
+            draw: {
+                polygon: true,
+                polyline: false,
+                rectangle: false,
+                circle: false,
+                circlemarker: false,
+            }
+        });
+        map.addControl(drawControl);
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer;
+            drawnItems.addLayer(layer);
+
+            // Example of getting GeoJSON for the drawn layer
+            var drawnGeoJSON = layer.toGeoJSON();
+            console.log(drawnGeoJSON);
+
+            // Here you would typically send the drawnGeoJSON back to the server
+            // This might involve setting up an endpoint in your Streamlit app to receive the data
+        });
     </script>
 </body>
 </html>
-"""
+
 
 def main():
     st.title("Streamlit Leaflet Map Integration")
