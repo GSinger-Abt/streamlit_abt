@@ -46,16 +46,17 @@ leaflet_map_html = """
             var layer = event.layer;
             drawnItems.addLayer(layer);
 
-            // Example of getting GeoJSON for the drawn layer
+            // Convert the drawn layer to GeoJSON
             var drawnGeoJSON = layer.toGeoJSON();
             console.log(drawnGeoJSON);
 
-            // Here you would typically send the drawnGeoJSON back to the server
-            // This might involve setting up an endpoint in your Streamlit app to receive the data
+            // Ideally, here you would send the GeoJSON data back to your Streamlit app's server
+            // This requires a custom Streamlit component
         });
     </script>
 </body>
 </html>
+
 """
 
 
