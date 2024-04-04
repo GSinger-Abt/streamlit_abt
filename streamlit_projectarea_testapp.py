@@ -56,6 +56,7 @@ leaflet_map_html = """
     </script>
 </body>
 </html>
+"""
 
 
 def main():
