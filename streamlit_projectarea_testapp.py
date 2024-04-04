@@ -22,8 +22,10 @@ def main():
     # Load the data
     gdf = fetch_data()
 
-    # Display the map to show the data and allow drawing
-    st.map(gdf)
+    st.dataframe(gdf)
+
+    # # Display the map to show the data and allow drawing
+    # st.map(gdf)
 
     # Add functionality for user interaction (selection/drawing and exporting)
     # This part would need more specific details on how you want the user to interact with the map
